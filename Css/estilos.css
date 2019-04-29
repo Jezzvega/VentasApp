@@ -1,0 +1,79 @@
+body{
+	background-color: #f5f5f5
+}
+
+.login{
+	display: none;
+}
+
+.load{
+	display: block;
+}
+
+.carrito{
+	display: none;
+}
+
+.admin{
+	display: none;
+}
+
+.home{
+	display: none;
+}
+
+.sidenavHome{
+	display: none;
+}
+
+.navbarHome{
+	display: none;
+}
+
+.modal{
+	border-radius: 15px;
+}
+
+.card, .card-panel{
+	border-radius: 15px;
+}
+
+table{
+	border-radius: 15px;
+}
+
+.loginCard{
+	border-radius: 15px;
+}
+
+.badge{
+	border-radius: 6px!important;
+}
+
+.card .card-content, .card-panel{
+	padding: 10px;
+}
+
+.collection-item{
+	padding: 5px 10px!important;
+}
+
+.card-img{
+	height: 160px;
+}
+
+.collection{
+	border-radius: 10px;
+}
+
+.btn{
+	border-radius: 12px;
+}
+
+.noBottom{
+	margin-bottom: 0px!important;
+}
+
+.pagination li.active{
+	background-color: #2196F3!important;
+}

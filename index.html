@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ventas</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="Css/estilos.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+	<div class="navbar-fixed navbarHome">
+	    
+	    <nav class="white z-depth-2">
+	      <div class="nav-wrapper">
+	      	<a href="#" data-target="slide-out" class="left sidenav-trigger show-on-large"><i class="material-icons black-text">menu</i></a>
+	        <a class="brand-logo black-text">Ventas</a>
+	        <ul class="right">
+	          <li><a href="#carrito" class="black-text link"><i class="material-icons left">shopping_cart</i><span class="new badge red" data-badge-caption="">0</span></a></li>
+	        </ul>
+	      </div>
+	    </nav>
+
+	</div>
+
+	<ul id="slide-out" class="sidenav sidenavHome">
+		<li>
+			<div class="user-view center">
+		    	<h3>Ventas</h3>
+		    </div>
+		</li>
+		<li><div class="divider"></div></li>
+		<li><a class="subheader">Categorías</a></li>
+			<li class="no-padding">
+				<ul class="collapsible collapsible-accordion">
+				    <li>
+				        <a class="collapsible-header">Pantallas<i class="material-icons">arrow_drop_down</i></a>
+				        <div class="collapsible-body">
+				            <ul>
+				              	<li><a href="#!">Samsung</a></li>
+				              	<li><a href="#!">LG</a></li>
+				              	<li><a href="#!">iPhone</a></li>
+				            </ul>
+				        </div>
+				    </li>
+				</ul>
+			</li>
+			<li class="no-padding">
+				<ul class="collapsible collapsible-accordion">
+				    <li>
+				        <a class="collapsible-header">Baterias<i class="material-icons">arrow_drop_down</i></a>
+				        <div class="collapsible-body">
+				            <ul>
+				               	<li><a href="#!">Samsung</a></li>
+				                <li><a href="#!">LG</a></li>
+				                <li><a href="#!">iPhone</a></li>
+				            </ul>
+				        </div>
+				    </li>
+				</ul>
+			</li>
+			<li class="no-padding">
+				<ul class="collapsible collapsible-accordion">
+				    <li>
+				        <a class="collapsible-header">Cables USB<i class="material-icons">arrow_drop_down</i></a>
+				        <div class="collapsible-body">
+				            <ul>
+				                <li><a href="#!">Micro Usb</a></li>
+				                <li><a href="#!">Lightning</a></li>
+				                <li><a href="#!">Tipo C</a></li>
+				            </ul>
+				        </div>
+				    </li>
+				</ul>
+			</li>
+	    <li><div class="divider"></div></li>
+		<li><a class="subheader ">Opciones de Administración</a></li>
+		<li><a href="#home" class="link sidenav-close"><i class="material-icons">home</i>Inicio</a></li>
+		<li><a href="#admin" class="link sidenav-close"><i class="material-icons">dashboard</i>Panel de Control</a></li>
+		<li><a id="logoutBtn" href="#" class="sidenav-close"><i class="material-icons red-text">exit_to_app</i>Cerrar Sesión</a></li>
+		
+	</ul>
+
+	<div id="newProductModal" class="modal">
+	    <div class="modal-content">
+	      	<div class="row">
+				<div class="col m12 l12">
+					<h4><b>Agregar Producto</b></h4>
+					<div class="divider"></div>
+				</div>
+			</div>
+	    </div>
+	    <div class="modal-footer">
+	      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+	    </div>
+	</div>
+
+	<div class="container home">
+		<div class="row">
+			<div class="col m12 l12">
+				<h4><b>Productos</b></h4>
+				<div class="divider"></div>
+			</div>
+		</div>
+		<div class="row listProductos">
+			<div class="col m12 l12">
+				<div class="row">
+					<div class="col m4 l3">
+						<div class="card white">
+							<div class="card-content">
+								<div class="row noBottom">
+									<div class="col s12 center">
+										<img class="card-img" src="img/g530lcd.jpg">
+										<p class="black-text"><b>Lcd Sam G530G</b></p>
+									</div>
+									<div class="col s12">
+										<ul class="collection">
+											<li class="collection-item"><b>Precio:</b><span class="right">$12.00</span></li>
+											<li class="collection-item"><b>Cantidad:</b><span class="right">+10</span></li>
+										</ul>
+									</div>
+									<div class="col s12 center">
+										<a href="#" class="btn blue"><i class="right material-icons">add</i>Añadir</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col m12 l12 center">
+				<ul class="pagination">
+				    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+				    <li class="active"><a href="#!">1</a></li>
+				    <li class="waves-effect"><a href="#!">2</a></li>
+				    <li class="waves-effect"><a href="#!">3</a></li>
+				    <li class="waves-effect"><a href="#!">4</a></li>
+				    <li class="waves-effect"><a href="#!">5</a></li>
+				    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container login">
+		<div class="row">
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<div class="col m6 offset-m3 l4 offset-l4 center white z-depth-2 loginCard">
+				<div class="row">
+					<div class="col s12">
+						<h4>Iniciar Sesión</h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+			          <i class="material-icons prefix">email</i>
+			          <input id="loginMail" type="email" class="validate">
+			          <label for="loginMail">Correo Electronico</label>
+			        </div>
+			        <div class="input-field col s12">
+			          <i class="material-icons prefix">lock_outline</i>
+			          <input id="loginPass" type="password" class="validate">
+			          <label for="loginPass">Contraseña</label>
+			        </div>
+			        <span class="errorMsj red-text"></span>
+				</div>
+				<div class="row">
+					<div class="col s12">
+			        	<a id="loginBtn" href="#" class="btn blue">Ingresar</a>
+			        </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container carrito">
+		<br>
+		<div class="row">
+			<div class="col m12 l12">
+				<h3><b>Carrito</b></h3>
+				<div class="divider"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col m12 l12">
+				<h6>Listado de Productos:</h6>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col m12 l12">
+				<h3 class="grey-text center">No hay productos en la cesta.</h3>
+				<table class="white z-depth-2 centered">
+					        <thead>
+						          <tr>
+						              <th>Nombre</th>
+						              <th>Precio</th>
+						              <th>Cantidad</th>
+						              <th>Total</th>
+						              <th>Quitar</th>
+						          </tr>
+						    </thead>
+
+						    <tbody>
+						          <tr>
+						            <td>LCD Sam G530M</td>
+						            <td>$15.00</td>
+						            <td>3</td>
+						            <td>$45.00</td>
+						            <td><span><a href=""><i class="material-icons red-text">cancel</i></a></span></td>
+						          </tr>
+						          <tr>
+						            <td>Cable Tipo C</td>
+						            <td>$8.00</td>
+						            <td>15</td>
+						            <td>$120.00</td>
+						            <td><span><a href=""><i class="material-icons red-text">cancel</i></a></span></td>
+						          </tr>
+						          <tr>
+						            <td>Batería iPhone 6s P</td>
+						            <td>$25.00</td>
+						            <td>6</td>
+						            <td>$150.00</td>
+						            <td><span><a href=""><i class="material-icons red-text">cancel</i></a></span></td>
+						          </tr>
+						    </tbody>
+						</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col m8 l8">
+				<a href="#home" class="link btn white black-text waves-effect left"><i class="material-icons left">chevron_left</i>Continuar Comprando</a>
+			</div>
+			<div class="col m4 l4">
+				<table class="white z-depth-2 centered">
+					        <thead>
+						          <tr>
+						              <th class="blue-text"><b>Total Carrito</b></th>
+						          </tr>
+						    </thead>
+
+						    <tbody>
+						          <tr>
+						            <td>$120.00</td>
+						          </tr>
+						    </tbody>
+						</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col m4 offset-m8 l4 offset-l8">
+				<a href="#" style="width: 100%;" class="btn blue waves-effect disabled">Realizar Pedido</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="container admin">
+		<br>
+		<div class="row">
+			<div class="col m3 l3">
+				<div class="card-panel white hoverable center">
+					<a href="#" data-target="newProductModal" class="modal-trigger"><i class="material-icons left">add_box</i>Producto</a> 
+				</div>
+			</div>
+			<div class="col m3 l3">
+				<div class="card-panel white hoverable center">
+					<a href="#"><i class="material-icons left">add_box</i>Categoría</a>
+				</div>
+			</div>
+			<div class="col m3 l3">
+				<div class="card-panel white hoverable center">
+					<a href="#"><i class="material-icons left">list</i>Pedidos</a> 
+				</div>
+			</div>
+			<div class="col m3 l3">
+				<div class="card-panel white hoverable center">
+					<a href="#"><i class="material-icons left">people_outline</i>Clientes</a></a> 
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col m12 l12">
+				<h4><b>Panel de Control</b></h4>
+				<div class="divider"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col m12 l12">
+				<div class="row">
+					<div class="col m4 l4">
+						<div class="card-panel white hoverable">
+					        <div class="row center noBottom">
+					        	<div class="col s12">
+					        		<i class="material-icons blue-text medium">event_note</i>
+					        		<h6 class="grey-text">Pedidos Realizados</h6>
+					        		<h6><b>75</b></h6>
+					        	</div>
+					        </div>
+					    </div>
+					</div>
+					<div class="col m4 l4">
+						<div class="card-panel white hoverable">
+					        <div class="row center noBottom">
+					        	<div class="col s12">
+					        		<i class="material-icons blue-text medium">event_busy</i>
+					        		<h6 class="grey-text">Pedidos Por Enviar</h6>
+					        		<h6><b>27</b></h6>
+					        	</div>
+					        </div>
+					    </div>
+					</div>
+					<div class="col m4 l4">
+						<div class="card-panel white hoverable">
+					        <div class="row center noBottom">
+					        	<div class="col s12">
+					        		<i class="material-icons blue-text medium">event_available</i>
+					        		<h6 class="grey-text">Pedidos Totales</h6>
+					        		<h6><b>245</b></h6>
+					        	</div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col m12 l12">
+						<h5>Pedidos Recientes</h5>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col m12 l12">
+						<table class="white z-depth-2 centered">
+					        <thead>
+						          <tr>
+						              <th>#</th>
+						              <th>Cliente</th>
+						              <th>Cantidad</th>
+						              <th>Estado</th>
+						              <th>Total</th>
+						          </tr>
+						    </thead>
+
+						    <tbody>
+						          <tr>
+						            <td>00001</td>
+						            <td>Chitre Tech</td>
+						            <td>50</td>
+						            <td><span class="new badge green" data-badge-caption="Enviado"></span></td>
+						            <td>$300.00</td>
+						          </tr>
+						          <tr>
+						            <td>00002</td>
+						            <td>Electronica Juan</td>
+						            <td>100</td>
+						            <td><span class="new badge red" data-badge-caption="Por Procesar"></span></td>
+						            <td>$650.00</td>
+						          </tr>
+						          <tr>
+						            <td>00003</td>
+						            <td>Electronica Jose</td>
+						            <td>120</td>
+						            <td><span class="new badge red" data-badge-caption="Por Procesar"></span></td>
+						            <td>$240.00</td>
+						          </tr>
+						          <tr>
+						            <td>00004</td>
+						            <td>Chitre Tech</td>
+						            <td>50</td>
+						            <td><span class="new badge green" data-badge-caption="Enviado"></span></td>
+						            <td>$300.00</td>
+						          </tr>
+						          <tr>
+						            <td>00005</td>
+						            <td>Electronica Juan</td>
+						            <td>100</td>
+						            <td><span class="new badge red" data-badge-caption="Por Procesar"></span></td>
+						            <td>$650.00</td>
+						          </tr>
+						    </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container load">
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div class="col m12 l12 center">
+			<div class="preloader-wrapper big active">
+			    <div class="spinner-layer spinner-blue-only">
+			      <div class="circle-clipper left">
+			        <div class="circle"></div>
+			      </div><div class="gap-patch">
+			        <div class="circle"></div>
+			      </div><div class="circle-clipper right">
+			        <div class="circle"></div>
+			      </div>
+			    </div>
+			  </div>
+		</div>
+	</div>
+
+	<footer class="page-footer login grey lighten-4">
+          <div class="footer-copyright  grey lighten-4">
+            <div class="container center">
+            	<p class="grey-text">Dev. by Roderick Gonzalez & Emilio Vega</p>
+            </div>
+          </div>
+    </footer>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-database.js"></script>
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyDCPN6dG9vCMwIEMOmX-vN6Xs2aicfKGrk",
+			authDomain: "proyectoventas507-b186a.firebaseapp.com",
+			databaseURL: "https://proyectoventas507-b186a.firebaseio.com",
+			projectId: "proyectoventas507-b186a",
+			storageBucket: "proyectoventas507-b186a.appspot.com",
+			messagingSenderId: "869698789477"
+		};
+		firebase.initializeApp(config);
+	</script>
+	<script src="Js/login.js"></script>
+	<script src="Js/logout.js"></script>
+	<script src="Js/materialize.js"></script>
+	<script src="Js/navegacion.js"></script>
+</body>
+</html>
