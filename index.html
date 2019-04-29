@@ -94,6 +94,32 @@
 	    </div>
 	</div>
 
+	<div id="newCatModal" class="modal">
+	    <div class="modal-content">
+	      	<div class="row">
+				<div class="col s12">
+					<h4><b>Agregar Categoría</b></h4>
+					<div class="divider"></div>
+				</div>
+				<div class="col s12">
+					<h6 class="grey-text">Nueva Categoría:</h6>
+				</div>
+				<div class="input-field col s12">
+		          	<input id="inNewCategoria" type="text" class="validate">
+		          	<label for="inNewCategoria">Nombre Categoria</label>
+		        </div>
+			</div>
+			<div class="row center">
+				<div class="col s12">
+					<a href="#" class="btn waves-effect blue">Agregar</a>
+				</div>
+			</div>
+	    </div>
+	    <div class="modal-footer">
+	      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+	    </div>
+	</div>
+
 	<div class="container home">
 		<div class="row">
 			<div class="col m12 l12">
@@ -270,7 +296,7 @@
 			</div>
 			<div class="col m3 l3">
 				<div class="card-panel white hoverable center">
-					<a href="#"><i class="material-icons left">add_box</i>Categoría</a>
+					<a href="#" data-target="newCatModal" class="modal-trigger"><i class="material-icons left">add_box</i>Categoría</a>
 				</div>
 			</div>
 			<div class="col m3 l3">
