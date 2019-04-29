@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="navbar-fixed navbarHome">
-	    
+
 	    <nav class="white z-depth-2">
 	      <div class="nav-wrapper">
 	      	<a href="#" data-target="slide-out" class="left sidenav-trigger show-on-large"><i class="material-icons black-text">menu</i></a>
@@ -77,7 +77,7 @@
 		<li><a href="#home" class="link sidenav-close"><i class="material-icons">home</i>Inicio</a></li>
 		<li><a href="#admin" class="link sidenav-close"><i class="material-icons">dashboard</i>Panel de Control</a></li>
 		<li><a id="logoutBtn" href="#" class="sidenav-close"><i class="material-icons red-text">exit_to_app</i>Cerrar Sesión</a></li>
-		
+
 	</ul>
 
 	<div id="newProductModal" class="modal">
@@ -111,7 +111,7 @@
 			</div>
 			<div class="row center">
 				<div class="col s12">
-					<a href="#" class="btn waves-effect blue">Agregar</a>
+					<a id="addCatBtn" href="#" class="btn waves-effect blue">Agregar</a>
 				</div>
 			</div>
 	    </div>
@@ -291,7 +291,7 @@
 		<div class="row">
 			<div class="col m3 l3">
 				<div class="card-panel white hoverable center">
-					<a href="#" data-target="newProductModal" class="modal-trigger"><i class="material-icons left">add_box</i>Producto</a> 
+					<a href="#" data-target="newProductModal" class="modal-trigger"><i class="material-icons left">add_box</i>Producto</a>
 				</div>
 			</div>
 			<div class="col m3 l3">
@@ -301,12 +301,12 @@
 			</div>
 			<div class="col m3 l3">
 				<div class="card-panel white hoverable center">
-					<a href="#"><i class="material-icons left">list</i>Pedidos</a> 
+					<a href="#"><i class="material-icons left">list</i>Pedidos</a>
 				</div>
 			</div>
 			<div class="col m3 l3">
 				<div class="card-panel white hoverable center">
-					<a href="#"><i class="material-icons left">people_outline</i>Clientes</a></a> 
+					<a href="#"><i class="material-icons left">people_outline</i>Clientes</a></a>
 				</div>
 			</div>
 		</div>
@@ -448,6 +448,7 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-database.js"></script>
@@ -467,5 +468,6 @@
 	<script src="Js/logout.js"></script>
 	<script src="Js/materialize.js"></script>
 	<script src="Js/navegacion.js"></script>
+	<script src="Js/addCateg.js"></script>
 </body>
 </html>
