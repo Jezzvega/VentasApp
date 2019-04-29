@@ -25,53 +25,14 @@
 	<ul id="slide-out" class="sidenav sidenavHome">
 		<li>
 			<div class="user-view center">
-		    	<h3>Ventas</h3>
+		    	<h3><b>Ventas</b></h3>
 		    </div>
 		</li>
 		<li><div class="divider"></div></li>
-		<li><a class="subheader">Categorías</a></li>
-			<li class="no-padding">
-				<ul class="collapsible collapsible-accordion">
-				    <li>
-				        <a class="collapsible-header">Pantallas<i class="material-icons">arrow_drop_down</i></a>
-				        <div class="collapsible-body">
-				            <ul>
-				              	<li><a href="#!">Samsung</a></li>
-				              	<li><a href="#!">LG</a></li>
-				              	<li><a href="#!">iPhone</a></li>
-				            </ul>
-				        </div>
-				    </li>
-				</ul>
-			</li>
-			<li class="no-padding">
-				<ul class="collapsible collapsible-accordion">
-				    <li>
-				        <a class="collapsible-header">Baterias<i class="material-icons">arrow_drop_down</i></a>
-				        <div class="collapsible-body">
-				            <ul>
-				               	<li><a href="#!">Samsung</a></li>
-				                <li><a href="#!">LG</a></li>
-				                <li><a href="#!">iPhone</a></li>
-				            </ul>
-				        </div>
-				    </li>
-				</ul>
-			</li>
-			<li class="no-padding">
-				<ul class="collapsible collapsible-accordion">
-				    <li>
-				        <a class="collapsible-header">Cables USB<i class="material-icons">arrow_drop_down</i></a>
-				        <div class="collapsible-body">
-				            <ul>
-				                <li><a href="#!">Micro Usb</a></li>
-				                <li><a href="#!">Lightning</a></li>
-				                <li><a href="#!">Tipo C</a></li>
-				            </ul>
-				        </div>
-				    </li>
-				</ul>
-			</li>
+		<li><a class="subheader">Categorías:</a></li>
+		<li><a href="#" class="sidenav-close"><i class="right material-icons blue-text">keyboard_arrow_right</i>Pantallas</a></li>
+		<li><a href="#" class="sidenav-close"><i class="right material-icons blue-text">keyboard_arrow_right</i>Cargadores</a></li>
+		<li><a href="#" class="sidenav-close"><i class="right material-icons blue-text">keyboard_arrow_right</i>Baterias</a></li>
 	    <li><div class="divider"></div></li>
 		<li><a class="subheader ">Opciones de Administración</a></li>
 		<li><a href="#home" class="link sidenav-close"><i class="material-icons">home</i>Inicio</a></li>
@@ -88,9 +49,55 @@
 					<div class="divider"></div>
 				</div>
 			</div>
-	    </div>
-	    <div class="modal-footer">
-	      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+			<div class="row">
+				<div class="input-field col s12">
+					<form action="#">
+					    <div class="file-field input-field">
+					      <div class="btn blue">
+					        <span>Imagen</span>
+					        <input type="file">
+					      </div>
+					      <div class="file-path-wrapper">
+					        <input class="file-path validate" type="text" placeholder="Subir Imagen...">
+					      </div>
+					    </div>
+					</form>
+				</div>
+				<div class="input-field col s6">
+		          	<input id="newProdCodigo" type="text" class="validate" placeholder="ABC123">
+		          	<label for="newProdCodigo">Código</label>
+		        </div>
+		        <div class="input-field col s6">
+		          	<input id="newProdNombre" type="text" class="validate" placeholder="LCD">
+		          	<label for="newProdNombre">Nombre</label>
+		        </div>
+		        <div class="input-field col s6">
+		          	<input id="newProdModelo" type="text" class="validate" placeholder="G530M">
+		          	<label for="newProdModelo">Modelo</label>
+		        </div>
+		        <div class="input-field col s6">
+		          	<input id="newProdCateg" type="text" class="validate" placeholder="Pantallas">
+		          	<label for="newProdCateg">Categoría</label>
+		        </div>
+		        <div class="input-field col s12">
+		          	<input id="newProdDetalles" type="text" class="validate" placeholder="Descripcion corta...">
+		          	<label for="newProdDetalles">Descripción</label>
+		        </div>
+		        <div class="input-field col s6">
+		          	<input id="newProdPrecio" type="text" class="validate" placeholder="30.00">
+		          	<label for="newProdPrecio">Precio</label>
+		        </div>
+		        <div class="input-field col s6">
+		          	<input id="newProdStock" type="text" class="validate" placeholder="30">
+		          	<label for="newProdStock">Stock</label>
+		        </div>
+			</div>
+			<div class="row">
+				<div class="col s12">
+					<a href="#" id="newProdBtn" class="left btn waves-effect blue">Agregar</a>
+					<a href="#" class="modal-close right btn-flat waves-effect"><b>Cancelar</b></a>
+				</div>
+			</div>
 	    </div>
 	</div>
 
@@ -109,21 +116,30 @@
 		          	<label for="inNewCategoria">Nombre Categoria</label>
 		        </div>
 			</div>
-			<div class="row center">
+			<div class="row">
 				<div class="col s12">
-					<a href="#" class="btn waves-effect blue">Agregar</a>
+					<a href="#" class="left btn waves-effect blue">Agregar</a>
+					<a href="#" class="modal-close right btn-flat waves-effect"><b>Cancelar</b></a>
 				</div>
 			</div>
-	    </div>
-	    <div class="modal-footer">
-	      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
 	    </div>
 	</div>
 
 	<div class="container home">
 		<div class="row">
+			<div class="col m6 l6">
+				<h4 class="left"><b>Productos</b></h4>
+			</div>
+			<div class="input-field col m6 l6">
+				<div class="nav-wrapper search white">
+			      	<div class="input-field">
+			          <input id="search" type="search" required class="search">
+			          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+			          <i class="material-icons">close</i>
+			        </div>
+			    </div>
+			</div>
 			<div class="col m12 l12">
-				<h4><b>Productos</b></h4>
 				<div class="divider"></div>
 			</div>
 		</div>
