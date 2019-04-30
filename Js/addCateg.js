@@ -5,6 +5,12 @@ $('#addCatBtn').on('click', function() {
 
   var categoria = document.getElementById('inNewCategoria').value;
 
+  function MaysPrimera(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  categoria = MaysPrimera(categoria.toLowerCase());
+  console.log(categoria);
+
   if (categoria != "") {
     var expresion = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]*$/;
 
@@ -21,35 +27,46 @@ $('#addCatBtn').on('click', function() {
     $("#inNewCategoria").after(
       '<span class="helper-text red-text">Este campo es obligatorio.</span>'
     );
-
-
     return false;
-
   }
 
-  ref.push({
-
-    nombre: categoria
-
-  }, function(error) {
-    if (error) {
-      console.log('Error');
-      swal({
-        title: "Categoria No Guardada!",
-        text: "La categoria "+categoria+" no se ha guardado!",
-        icon: "error",
-        button: "Reintentar!",
-      });
+  ref.orderByChild("nombre").equalTo(categoria).once("value", snapshot => {
+    const userData = snapshot.val();
+    if (userData) {
+      console.log("Ya existe!");
+      swal("Ya existe!", "...intenta con otra categoria!");
     } else {
+      ref.push({
 
-      swal({
-        title: "Categoria Guardada!",
-        text: "La categoria "+categoria+" se ha guardado con exito!",
-        icon: "success",
-        button: "Ok!",
+        nombre: categoria
+
+      }, function(error) {
+        if (error) {
+          console.log('Error');
+          swal({
+            title: "Categoria No Guardada!",
+            text: "La categoria " + categoria + " no se ha guardado!",
+            icon: "error",
+            button: "Reintentar!",
+          });
+        } else {
+
+          swal({
+            title: "Categoria Guardada!",
+            text: "La categoria " + categoria + " se ha guardado con exito!",
+            icon: "success",
+            button: "Ok!",
+          });
+          document.getElementById('inNewCategoria').value = "";
+          $('.modal').modal('close');
+        }
       });
-      document.getElementById('inNewCategoria').value = "";
-      $('.modal').modal('close');
+
+
     }
   });
+
+
+
+
 });
