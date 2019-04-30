@@ -30,9 +30,7 @@
 		</li>
 		<li><div class="divider"></div></li>
 		<li><a class="subheader">Categorías:</a></li>
-		<li><a href="#" class="sidenav-close"><i class="right material-icons blue-text">keyboard_arrow_right</i>Pantallas</a></li>
-		<li><a href="#" class="sidenav-close"><i class="right material-icons blue-text">keyboard_arrow_right</i>Cargadores</a></li>
-		<li><a href="#" class="sidenav-close"><i class="right material-icons blue-text">keyboard_arrow_right</i>Baterias</a></li>
+		<li class="categList"></li>
 	    <li><div class="divider"></div></li>
 		<li><a class="subheader ">Opciones de Administración</a></li>
 		<li><a href="#home" class="link sidenav-close"><i class="material-icons">home</i>Inicio</a></li>
@@ -75,9 +73,11 @@
 		          	<input id="newProdModelo" type="text" class="validate" placeholder="G530M">
 		          	<label for="newProdModelo">Modelo</label>
 		        </div>
-		        <div class="input-field col s6">
-		          	<input id="newProdCateg" type="text" class="validate" placeholder="Pantallas">
-		          	<label for="newProdCateg">Categoría</label>
+		        <div class="col s6">
+		          	<label>Categoría</label>
+					<select class="browser-default selectCateg">
+					    
+					</select>
 		        </div>
 		        <div class="input-field col s12">
 		          	<input id="newProdDetalles" type="text" class="validate" placeholder="Descripcion corta...">
@@ -128,14 +128,22 @@
 	</div>
 
 	<div class="container home">
+		<div class="row center">
+			<div class="col m12 l12">
+				<h4><b>Home</b></h4>
+			</div>
+		</div>
+	</div>
+
+	<div class="container categorias">
 		<div class="row">
 			<div class="col m6 l6">
-				<h4 class="left"><b>Productos</b></h4>
+				<h4 class="left categTitle"></h4>
 			</div>
 			<div class="input-field col m6 l6">
 				<div class="nav-wrapper search white">
 			      	<div class="input-field">
-			          <input id="search" type="search" required class="search">
+			          <input id="search" type="search" required class="search" placeholder="Buscar...">
 			          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
 			          <i class="material-icons">close</i>
 			        </div>
@@ -487,5 +495,6 @@
 	<script src="Js/materialize.js"></script>
 	<script src="Js/navegacion.js"></script>
 	<script src="Js/addCateg.js"></script>
+	<script src="Js/loadCateg.js"></script>
 </body>
 </html>

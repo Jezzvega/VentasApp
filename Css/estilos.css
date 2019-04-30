@@ -14,6 +14,10 @@ body{
 	display: none;
 }
 
+.categorias{
+  display: none;
+}
+
 .admin{
 	display: none;
 }
@@ -32,6 +36,10 @@ body{
 
 .search{
 	border-radius: 10px!important;
+}
+
+.selectCateg{
+  border-radius: 10px!important;
 }
 
 .modal{
