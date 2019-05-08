@@ -38,7 +38,7 @@
 		<li><a id="logoutBtn" href="#" class="sidenav-close"><i class="material-icons red-text">exit_to_app</i>Cerrar Sesión</a></li>
 
 	</ul>
-
+<!-- PRODUCTOS-->
 	<div id="newProductModal" class="modal">
 	    <div class="modal-content">
 	      	<div class="row">
@@ -53,10 +53,10 @@
 					    <div class="file-field input-field">
 					      <div class="btn blue">
 					        <span>Imagen</span>
-					        <input type="file">
+					        <input id="imagenP" type="file">
 					      </div>
 					      <div class="file-path-wrapper">
-					        <input class="file-path validate" type="text" placeholder="Subir Imagen...">
+					        <input id="namefile" class="file-path validate" type="text" placeholder="Subir Imagen...">
 					      </div>
 					    </div>
 					</form>
@@ -75,8 +75,8 @@
 		        </div>
 		        <div class="col s6">
 		          	<label>Categoría</label>
-					<select class="browser-default selectCateg">
-					    
+					<select id="newProdCat" class="browser-default selectCateg">
+
 					</select>
 		        </div>
 		        <div class="input-field col s12">
@@ -100,7 +100,7 @@
 			</div>
 	    </div>
 	</div>
-
+<!-- FIN PRODUCTOS-->
 	<div id="newCatModal" class="modal">
 	    <div class="modal-content">
 	      	<div class="row">
@@ -478,6 +478,7 @@
 	<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-storage.js"></script>
 	<script>
 		// Initialize Firebase
 		var config = {
@@ -496,5 +497,6 @@
 	<script src="Js/navegacion.js"></script>
 	<script src="Js/addCateg.js"></script>
 	<script src="Js/loadCateg.js"></script>
+	<script src="Js/addProduct.js"></script>
 </body>
 </html>
