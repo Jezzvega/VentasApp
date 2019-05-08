@@ -15,7 +15,8 @@
 	      	<a href="#" data-target="slide-out" class="left sidenav-trigger show-on-large"><i class="material-icons black-text">menu</i></a>
 	        <a class="brand-logo black-text">Ventas</a>
 	        <ul class="right">
-	          <li><a href="#carrito" class="black-text link"><i class="material-icons left">shopping_cart</i><span class="new badge red" data-badge-caption="">0</span></a></li>
+	          <li><a href="#carrito" class="black-text link"><i class="material-icons left">shopping_cart</i><span class="cantidadCesta new badge red" data-badge-caption=""></span>
+	          	<span style="display: none" class="sumaCesta new badge red" data-badge-caption=""></span></a></li>
 	        </ul>
 	      </div>
 	    </nav>
@@ -110,6 +111,7 @@
 				</div>
 				<div class="col s12">
 					<h6 class="grey-text">Nueva Categoría:</h6>
+					<br>
 				</div>
 				<div class="input-field col s12">
 		          	<input id="inNewCategoria" type="text" class="validate">
@@ -127,10 +129,127 @@
 	    </div>
 	</div>
 
+	<div id="clienteModal" class="modal">
+	    <div class="modal-content">
+	      	<div class="row">
+				<div class="col s12">
+					<h4><b>Clientes</b></h4>
+					<div class="divider"></div>
+				</div>
+				<div class="col s12">
+					<h6 class="grey-text">Agregar un Cliente:</h6>
+					<br>
+				</div>
+				<div class="input-field col s6">
+		          	<input id="inNombreNegocio" type="text" class="validate" placeholder="Ej. Tienda La Esperanza">
+		          	<label for="inNombreNegocio">Nombre del Negocio</label>
+		        </div>
+		        <div class="input-field col s6">
+		          	<input id="inNombreDueno" type="text" class="validate" placeholder="Ej. Jose Rodriguez">
+		          	<label for="inNombreDueno">Nombre del Dueño</label>
+		        </div>
+		        <div class="input-field col s12">
+		          	<input id="inUbicNegocio" type="text" class="validate" placeholder="Ej. Los Santos, Plaza Azuero, Local #3">
+		          	<label for="inUbicNegocio">Ubicación del Negocio</label>
+		        </div>
+		        <div class="input-field col s6">
+		          	<input id="inTelNegocio" type="text" class="validate" placeholder="Ej. 994-0000">
+		          	<label for="inTelNegocio">Numero de Teléfono</label>
+		        </div>
+		        <div class="input-field col s6">
+		          	<input id="inCelNegocio" type="text" class="validate" placeholder="Ej. 6600-0000">
+		          	<label for="inCelNegocio">Numero de Celular</label>
+		        </div>
+		        
+			</div>
+			<div class="row">
+				<div class="col s12">
+					<a href="#" id="newClientBtn" class="left btn waves-effect blue">Agregar</a>
+					<a href="#" class="modal-close right btn-flat waves-effect"><b>Cancelar</b></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="container home">
-		<div class="row center">
+		<div class="row ">
 			<div class="col m12 l12">
-				<h4><b>Home</b></h4>
+				<h3><b>Inicio</b></h3>
+				<div class="divider"></div>
+			</div>
+		</div>
+		<div class="row listProductos">
+			<div class="col m12 l12">
+				<div class="row">
+					<div class="col m12 l12">
+						<h5><b>Más Vendidos</b></h5>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col m4 l3">
+						<div class="card white">
+							<div class="card-content">
+								<div class="row noBottom">
+									<div class="col s12 center">
+										<img class="card-img" src="img/g530lcd.jpg">
+										<p class="black-text"><b>LCD SAM G530M</b></p>
+									</div>
+									<div class="col s12">
+										<ul class="collection">
+											<li class="collection-item"><b>Precio:</b><span class="right">$15.00</span></li>
+											<li class="collection-item"><b>Cantidad:</b><span class="right">+10</span></li>
+										</ul>
+									</div>
+									<div class="col s12 center">
+										<a href="#" codProducto="123" cantProducto="1" nombreProducto="LCD SAM" modelProducto="G530M" categProducto="Pantallas" precioProducto="15.00" stockProducto="45" class="addProduct btn blue"><i class="right material-icons">add</i>Añadir</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col m4 l3">
+						<div class="card white">
+							<div class="card-content">
+								<div class="row noBottom">
+									<div class="col s12 center">
+										<img class="card-img" src="img/g3lcd.jpg">
+										<p class="black-text"><b>LCD LG G3</b></p>
+									</div>
+									<div class="col s12">
+										<ul class="collection">
+											<li class="collection-item"><b>Precio:</b><span class="right">$12.00</span></li>
+											<li class="collection-item"><b>Cantidad:</b><span class="right">+10</span></li>
+										</ul>
+									</div>
+									<div class="col s12 center">
+										<a href="#" codProducto="234" cantProducto="1" nombreProducto="LCD LG" modelProducto="G3" categProducto="Pantallas" precioProducto="12.00" stockProducto="24" class="addProduct btn blue"><i class="right material-icons">add</i>Añadir</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col m4 l3">
+						<div class="card white">
+							<div class="card-content">
+								<div class="row noBottom">
+									<div class="col s12 center">
+										<img class="card-img" src="img/g3lcd.jpg">
+										<p class="black-text"><b>LCD LG G3</b></p>
+									</div>
+									<div class="col s12">
+										<ul class="collection">
+											<li class="collection-item"><b>Precio:</b><span class="right">$12.00</span></li>
+											<li class="collection-item"><b>Cantidad:</b><span class="right">+10</span></li>
+										</ul>
+									</div>
+									<div class="col s12 center">
+										<a href="#" codProducto="234" cantProducto="1" nombreProducto="LCD LG" modelProducto="G3" categProducto="Pantallas" precioProducto="12.00" stockProducto="24" class="addProduct btn blue"><i class="right material-icons">add</i>Añadir</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -143,8 +262,8 @@
 			<div class="input-field col m6 l6">
 				<div class="nav-wrapper search white">
 			      	<div class="input-field">
-			          <input id="search" type="search" required class="search" placeholder="Buscar...">
-			          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+			          <input id="searchHome" type="search" required class="search" placeholder="Buscar...">
+			          <label class="label-icon" for="searchHome"><i class="material-icons">search</i></label>
 			          <i class="material-icons">close</i>
 			        </div>
 			    </div>
@@ -162,7 +281,28 @@
 								<div class="row noBottom">
 									<div class="col s12 center">
 										<img class="card-img" src="img/g530lcd.jpg">
-										<p class="black-text"><b>Lcd Sam G530G</b></p>
+										<p class="black-text"><b>LCD SAM G530M</b></p>
+									</div>
+									<div class="col s12">
+										<ul class="collection">
+											<li class="collection-item"><b>Precio:</b><span class="right">$15.00</span></li>
+											<li class="collection-item"><b>Cantidad:</b><span class="right">+10</span></li>
+										</ul>
+									</div>
+									<div class="col s12 center">
+										<a href="#" codProducto="123" cantProducto="1" nombreProducto="LCD SAM" modelProducto="G530M" categProducto="Pantallas" precioProducto="15.00" stockProducto="45" class="addProduct btn blue"><i class="right material-icons">add</i>Añadir</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col m4 l3">
+						<div class="card white">
+							<div class="card-content">
+								<div class="row noBottom">
+									<div class="col s12 center">
+										<img class="card-img" src="img/g3lcd.jpg">
+										<p class="black-text"><b>LCD LG G3</b></p>
 									</div>
 									<div class="col s12">
 										<ul class="collection">
@@ -171,7 +311,7 @@
 										</ul>
 									</div>
 									<div class="col s12 center">
-										<a href="#" class="btn blue"><i class="right material-icons">add</i>Añadir</a>
+										<a href="#" codProducto="234" cantProducto="1" nombreProducto="LCD LG" modelProducto="G3" categProducto="Pantallas" precioProducto="12.00" stockProducto="24" class="addProduct btn blue"><i class="right material-icons">add</i>Añadir</a>
 									</div>
 								</div>
 							</div>
@@ -241,48 +381,31 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col m12 l12">
+			<div class="col m6 l6">
 				<h6>Listado de Productos:</h6>
+			</div>
+			<div class="col m6 l6">
+				<a href="#" class="refreshBtn btn white black-text waves-effect right"><i class="material-icons left">refresh</i>Actualizar</a>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col m12 l12">
-				<h3 class="grey-text center">No hay productos en la cesta.</h3>
 				<table class="white z-depth-2 centered">
-					        <thead>
-						          <tr>
-						              <th>Nombre</th>
-						              <th>Precio</th>
-						              <th>Cantidad</th>
-						              <th>Total</th>
-						              <th>Quitar</th>
-						          </tr>
-						    </thead>
+					<thead>
+						<tr>
+							<th>#</th>
+						    <th>Nombre</th>
+						    <th>Precio</th>
+						    <th>Cantidad</th>
+						    <th>Total</th>
+						    <th>Quitar</th>
+						</tr>
+					</thead>
 
-						    <tbody>
-						          <tr>
-						            <td>LCD Sam G530M</td>
-						            <td>$15.00</td>
-						            <td>3</td>
-						            <td>$45.00</td>
-						            <td><span><a href=""><i class="material-icons red-text">cancel</i></a></span></td>
-						          </tr>
-						          <tr>
-						            <td>Cable Tipo C</td>
-						            <td>$8.00</td>
-						            <td>15</td>
-						            <td>$120.00</td>
-						            <td><span><a href=""><i class="material-icons red-text">cancel</i></a></span></td>
-						          </tr>
-						          <tr>
-						            <td>Batería iPhone 6s P</td>
-						            <td>$25.00</td>
-						            <td>6</td>
-						            <td>$150.00</td>
-						            <td><span><a href=""><i class="material-icons red-text">cancel</i></a></span></td>
-						          </tr>
-						    </tbody>
-						</table>
+					<tbody class="cuerpoCarrito">
+						          
+					</tbody>
+				</table>
 			</div>
 		</div>
 		<div class="row">
@@ -299,7 +422,7 @@
 
 						    <tbody>
 						          <tr>
-						            <td>$120.00</td>
+						            <td>$<span class="sumaCesta"></span></td>
 						          </tr>
 						    </tbody>
 						</table>
@@ -307,7 +430,7 @@
 		</div>
 		<div class="row">
 			<div class="col m4 offset-m8 l4 offset-l8">
-				<a href="#" style="width: 100%;" class="btn blue waves-effect disabled">Realizar Pedido</a>
+				<a href="#" style="width: 100%;" class="hacerPedidoBtn btn blue waves-effect disabled">Realizar Pedido</a>
 			</div>
 		</div>
 	</div>
@@ -332,7 +455,7 @@
 			</div>
 			<div class="col m3 l3">
 				<div class="card-panel white hoverable center">
-					<a href="#"><i class="material-icons left">people_outline</i>Clientes</a></a>
+					<a href="#clientesDiv"><i class="material-icons left">people_outline</i>Clientes</a></a>
 				</div>
 			</div>
 		</div>
@@ -437,6 +560,31 @@
 						</table>
 					</div>
 				</div>
+				<div class="row scrollspy" id="clientesDiv">
+					<div class="col m6 l6">
+						<h5>Clientes</h5>
+					</div>
+					<div class="col m6 l6">
+						<h5><a href="#" data-target="clienteModal" class="modal-trigger right btn white blue-text waves-effect"><i class="material-icons left">add_box</i>Agregar Clientes</a></h5>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col m12 l12">
+						<table class="white z-depth-2 centered">
+					        <thead>
+						          <tr>
+						              <th>Nombre</th>
+						              <th>Dueño</th>
+						              <th>Teléfonos</th>
+						          </tr>
+						    </thead>
+
+						    <tbody class="listClientes">
+						    		
+						    </tbody>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -491,12 +639,15 @@
 		};
 		firebase.initializeApp(config);
 	</script>
+	<script src="Js/carritoDeCompras.js"></script>
 	<script src="Js/login.js"></script>
 	<script src="Js/logout.js"></script>
 	<script src="Js/materialize.js"></script>
 	<script src="Js/navegacion.js"></script>
 	<script src="Js/addCateg.js"></script>
 	<script src="Js/loadCateg.js"></script>
-	<script src="Js/addProduct.js"></script>
+  <script src="Js/addProduct.js"></script>
+  <script src="Js/Clientes.js"></script>
+	<script src="Js/loadClientes.js"></script>
 </body>
 </html>
