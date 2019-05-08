@@ -38,6 +38,10 @@ body{
 	border-radius: 10px!important;
 }
 
+.cantidadItem{
+  width: 50px;
+}
+
 .selectCateg{
   border-radius: 10px!important;
 }
