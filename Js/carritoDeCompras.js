@@ -61,7 +61,7 @@ if(localStorage.getItem("listaProductos") != null){
 AGREGAR AL CARRITO
 */
 
-$(".addProduct").click(function(){
+$(".listProductos").on('click','.addProduct', function(){
 
 
 	var idProducto = $(this).attr("codProducto");

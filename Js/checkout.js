@@ -1,5 +1,7 @@
 const ITBMS = 0.07;
 
+var refPedidos = database.ref('pedidos');
+
 $("#checkoutBtn").on('click', function(){
 
 	var numeroPedido = "000001";
@@ -11,6 +13,7 @@ $("#checkoutBtn").on('click', function(){
 	var estadoPedido = 0;
 	var nombreDueno = $("#checkoutNombreDueno").val();
 	
+	var codeProducto = $('.cuerpoCarrito a');
 	var nombreProductos = $('.cuerpoCarrito .tituloCarritoCompra');
 	var precioProductos = $('.cuerpoCarrito .precioCarritoCompra span');
 	var precioSubtotalProductos = $('.cuerpoCarrito .subTotal span');
@@ -27,31 +30,75 @@ $("#checkoutBtn").on('click', function(){
 
 	}
 
-	for (var i = 0; i < nombreProductos.length; i++) {
+	var newPedidoKey = refPedidos.push().key;
+
+	database.ref('pedidos/'+ newPedidoKey).set({
+
+		NumPedido: numeroPedido,
+		Fecha: fechaPedido,
+		Cliente: idclientePedido,
+		PrecioBruto: precioBrutoPedido,
+		ITBMS: itbmsPedido,
+		PrecioTot: precioTotalPedido,
+		Estado: estadoPedido
+
+	}, function(error) {
+    
+	    if (error) {
+	      
+		    swal({
+		        title: "Pedido no enviado!",
+		        text: "El pedido #" + numeroPedido + " no se ha guardado!",
+		        icon: "error",
+		        button: "Reintentar!",
+		    });
+
+	    } else {
+
+	    	for (var i = 0; i < nombreProductos.length; i++) {
 		
-		var nombreProductosArray = $(nombreProductos[i]).html();
-		var precioProductosArray = $(precioProductos[i]).html();
-		var precioSubtotalProductosArray = $(precioSubtotalProductos[i]).html();
-		var cantidadProductosArray = $(cantidadProductos[i]).val();
+				var codeProductosArray = $(codeProducto[i]).attr('idProducto');
+				var nombreProductosArray = $(nombreProductos[i]).html();
+				var precioProductosArray = $(precioProductos[i]).html();
+				var precioSubtotalProductosArray = $(precioSubtotalProductos[i]).html();
+				var cantidadProductosArray = $(cantidadProductos[i]).val();
 
-		console.log(
-				nombreProductosArray + " " + 
-				precioProductosArray + " " + 
-				cantidadProductosArray + " " + 
-				precioSubtotalProductosArray
-				);
+				database.ref('pedidos/'+ newPedidoKey +'/productos/').push({
 
-	}
+					Codigo: codeProductosArray,
+					Nombre: nombreProductosArray,
+					Precio: Number(precioProductosArray),
+					Cantidad: cantidadProductosArray,
+					PrecioSubTot: Number(precioSubtotalProductosArray)
 
-	console.log(
-				"# Pedido: " + numeroPedido + "\n",
-				"Fecha " + fechaPedido + "\n",
-				"Cliente: " + idclientePedido + "\n",
-				"Precio Bruto: " + precioBrutoPedido + "\n",
-				"ITBMS: " + itbmsPedido + "\n",
-				"precioTotalPedido: " + precioTotalPedido + "\n",
-				"Estado: " + estadoPedido + "\n",
-				);
+				});
+
+			}
+
+		    swal({
+		        title: "Pedido Guardado!",
+		        text: "El pedido # " + numeroPedido + " se ha guardado con exito!",
+		        icon: "success",
+		        button: "Ok!",
+		    })
+		    .then((value) => {
+				
+				if(value || value == null){
+
+					//limpia la cesta
+					localStorage.removeItem("listaProductos");
+				    localStorage.removeItem("cantidadCesta");
+				    localStorage.removeItem("sumaCesta");
+				    //recarga la pagina
+				    location.reload();
+
+				}
+
+			});;
+
+	    }
+
+	});
 
 });
 

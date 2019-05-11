@@ -42,6 +42,11 @@ select{
   border-radius: 10px!important;
 }
 
+[type="checkbox"]:checked+span:not(.lever):before {
+  border-right: 2px solid #2196F3 !important;;
+  border-bottom: 2px solid #2196F3 !important;;
+}
+
 .cantidadItem{
   width: 50px;
 }
@@ -76,6 +81,7 @@ table{
 
 .card-img{
 	height: 160px;
+  width: 100%;
 }
 
 .collection{

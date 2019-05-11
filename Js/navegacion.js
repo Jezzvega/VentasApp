@@ -10,6 +10,7 @@ $('.link').on('click', function(){
 			$('.admin').css('display', 'none');
 			$('.login').css('display', 'none');
 			$('.home').css('display', 'block');
+			getProductMasVendidos();
 		break;
 
 		case "#admin": 
@@ -18,6 +19,7 @@ $('.link').on('click', function(){
 			$('.home').css('display', 'none');
 			$('.login').css('display', 'none');
 			$('.admin').css('display', 'block');
+			loadUltimosPedidos();
 		break;
 
 		case "#carrito": 
@@ -47,6 +49,8 @@ $('.categList').on('click', '.link', function(){
 
 		$('.categTitle').empty();
 		$('.categTitle').append('<b>'+nombCateg+'</b>');
+
+		getProductCateg(nombCateg);
 	}
 
 });
