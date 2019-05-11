@@ -38,12 +38,12 @@ body{
 	border-radius: 10px!important;
 }
 
-.cantidadItem{
-  width: 50px;
+select{
+  border-radius: 10px!important;
 }
 
-.selectCateg{
-  border-radius: 10px!important;
+.cantidadItem{
+  width: 50px;
 }
 
 .modal{

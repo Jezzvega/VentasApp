@@ -1,6 +1,7 @@
 $(".refreshBtn").click(function(){
 	location.reload();
 });
+
 /*
 VER LA CESTA DEL CARRITO DE COMPRAS
 */
@@ -34,7 +35,7 @@ if(localStorage.getItem("listaProductos") != null){
 				'<td class="tituloCarritoCompra">' + item.nombre + '</td>' +
 				'<td class="precioCarritoCompra">$<span>' + parseFloat(item.precio).toFixed(2) + '</span></td>' +
 				'<td class="cantidadCarritoCompra">' +
-					'<input type="number" class="cantidadItem browser-default" min="1" value="'+item.cantidad+'" precio="'+item.precio+'" idProducto="'+ item.idProducto +'" validate>' +
+					'<input type="number" class="cantidadItem browser-default" min="1" max="'+item.stock+'" value="'+item.cantidad+'" precio="'+item.precio+'" idProducto="'+ item.idProducto +'" validate>' +
 				'</td>' +
 				'<td class="subtotales'+item.idProducto+' subTotal">$<span>'+ parseFloat(item.precio).toFixed(2) + '</span></td>' +
 				'<td><span><a href="#" class="quitarItemCarrito" idProducto="' + item.idProducto + '" stockProducto="'+ item.stock +'"><i class="material-icons red-text">cancel</i></a></span></td>' +
@@ -129,7 +130,7 @@ $(".cuerpoCarrito").on('click', '.quitarItemCarrito', function(){
 	var idProducto = $('.cuerpoCarrito a');
 	var nombre = $('.cuerpoCarrito .tituloCarritoCompra');
 	var precio = $('.cuerpoCarrito .precioCarritoCompra span');
-	var cantidad = $('.cuerpoCarrito .cantidadCarritoCompra');
+	var cantidad = $('.cuerpoCarrito .cantidadItem');
 
 	listaCarrito = [];
 

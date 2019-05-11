@@ -430,7 +430,92 @@
 		</div>
 		<div class="row">
 			<div class="col m4 offset-m8 l4 offset-l8">
-				<a href="#" style="width: 100%;" class="hacerPedidoBtn btn blue waves-effect disabled">Realizar Pedido</a>
+				<a href="#" data-target="checkoutModal" style="width: 100%;" class="hacerPedidoBtn modal-trigger btn blue waves-effect disabled">Realizar Pedido</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="checkoutModal" class="modal">
+	    <div class="modal-content">
+	      	<div class="row">
+				<div class="col s12">
+					<h4><b>Realizar Pedido</b></h4>
+					<div class="divider"></div>
+					<br>
+				</div>
+				
+				<div class="col s6">
+					<div class="row">
+						<div class="col s12">
+							<h5 class="black-text">Enviar a:</h5>
+						</div>
+						<div class="col s12">
+							<label>Cliente:</label>
+							<select id="nombreCliente" class="browser-default selectCliente">
+								
+							</select>
+							<br>
+						</div>
+						<div class="input-field col s12">
+				          	<input id="checkoutNombreDueno" type="text" class="validate" placeholder="" disabled>
+				          	<label for="checkoutNombreDueno">Dueño</label>
+				        </div>
+				        <div class="input-field col s12">
+				          	<textarea id="checkoutUbic" type="text" class="materialize-textarea" placeholder="" disabled></textarea>
+				          	<label for="checkoutUbic">Ubicación</label>
+				        </div>
+					</div>
+		        </div>
+
+		        <div class="col s6">
+					<div class="row">
+						<div class="col s12">
+							<h5 class="black-text">Pedido:</h5>
+						</div>
+						<div class="col s12">
+							<table class="centered">
+								
+								<tbody>
+									<tr>
+							            <td class="grey-text left"><b>Pedido:</b></td>
+							            <td class="right"><b>$<span class="sumaCheckout"></span></b></td>
+							        </tr>
+							        <tr>
+							            <td class="grey-text left"><b>Envío:</b></td>
+							            <td class="right"><b>$<span>0.00</span></b></td>
+							        </tr>
+							        <tr>
+							            <td class="grey-text left"><b>ITBMS:</b></td>
+							            <td class="right"><b>$<span class="sumaChechoutITBMS"></span></b></td>
+							        </tr>
+								</tbody>
+
+							</table>
+						</div>
+						<div class="col s12 center">
+							<p>
+						      <label>
+						        <input id="checkboxCobrarITMBS" type="checkbox" checked="checked" />
+						        <span>¿Cobrar ITMBS?</span>
+						      </label>
+						    </p>
+						</div>
+						<div class="col s6 offset-s6">
+							<h6 class="right"><b>Total:</b></h6>
+							<br>
+							<h5 class="right blue-text"><b>$<span class="sumaTotalCheckout"></span></b></h5>
+						</div>
+					</div>
+		        </div>
+
+		    </div>
+			<div class="row">
+				<div class="col s6">
+					<a href="#" class="modal-close left btn-flat waves-effect"><b>Cancelar</b></a>
+				</div>
+				<div class="col s6">
+					<a style="width: 100%;" href="#" id="checkoutBtn" class="right btn waves-effect blue">¡Realizar Pedido!</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -649,5 +734,6 @@
   <script src="Js/addProduct.js"></script>
   <script src="Js/Clientes.js"></script>
 	<script src="Js/loadClientes.js"></script>
+	<script src="Js/checkout.js"></script>
 </body>
 </html>
