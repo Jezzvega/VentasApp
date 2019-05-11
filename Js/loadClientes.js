@@ -5,7 +5,7 @@ $( document ).ready(function() {
   	clientRef.orderByChild("NombreDueno").on('value', function(snapshot) {
 
   		$('.listClientes').empty();
-  		//$('.selectCateg').empty();
+  		$('.selectCliente').empty();
 
   		snapshot.forEach(function(childSnapshot) {
 	    
@@ -19,9 +19,27 @@ $( document ).ready(function() {
 						    			'</tr>'
 	  									);
 		    
-		    //$('.selectCateg').append('<option value="'+ childData.nombre +'">'+ childData.nombre +'</option>');
+		    $('.selectCliente').append('<option value="'+ childData.NombreNegocio +'" id="'+childSnapshot.key+'">'+ childData.NombreNegocio +'</option>');
 	  
 	  	});
+
+		$(".selectCliente").change(function(){
+
+			var clienteKey = $( ".selectCliente option:selected" ).attr('id');
+
+		  	clientRef.child(clienteKey).once('value',function(snapshot){
+
+		  		var snap = snapshot.val();
+
+		  		$("#checkoutNombreDueno").val(snap.NombreDueno);
+		  		$("#checkoutUbic").val(snap.UbicacionNegocio);
+		  		//Actualiza el textarea de Materialize
+		  		M.textareaAutoResize($('#checkoutUbic'));
+
+		  	});
+
+		});
 	
 	});
+
 });
