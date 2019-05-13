@@ -75,6 +75,5 @@ function mostrarContenido(user){
   $('.home').css("display", "block");
   $('.admin').css("display", "none");
   $('.login').css("display", "none");
-  getProductMasVendidos();
 
     }

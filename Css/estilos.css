@@ -42,10 +42,35 @@ select{
   border-radius: 10px!important;
 }
 
+/*COLOR DEL CHECKBOX*/
 [type="checkbox"]:checked+span:not(.lever):before {
   border-right: 2px solid #2196F3 !important;;
   border-bottom: 2px solid #2196F3 !important;;
 }
+
+
+/*COLOR DE LAS TABS
+####################################################*/
+
+.tabs .tab a{
+    color:#000;
+} /*Black color to the text*/
+
+.tabs .tab a:hover {
+    background-color:#e3f2fd!important;
+    color:#000;
+} /*Text color on hover*/
+
+.tabs .tab a.active {
+    background-color:white!important;
+    color:#2196F3!important;
+} /*Background and text color when a tab is active*/
+
+.tabs .indicator {
+    background-color:#2196F3!important;
+} /*Color of underline*/
+
+
 
 .cantidadItem{
   width: 50px;
@@ -88,7 +113,7 @@ table{
 	border-radius: 10px;
 }
 
-.btn{
+.btn, .btn-flat{
 	border-radius: 12px;
 }
 

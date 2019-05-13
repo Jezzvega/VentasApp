@@ -1,8 +1,6 @@
 var pedidosRef = database.ref('pedidos');
 
-function loadUltimosPedidos(){
-
-	pedidosRef.orderByKey().limitToLast(5).on('value', function(snapshot){
+pedidosRef.orderByKey().limitToLast(5).on('value', function(snapshot){
 
 		$(".pedidosRecientes").empty();
 
@@ -36,6 +34,4 @@ function loadUltimosPedidos(){
 
 		});
 
-	});
-
-}
+});

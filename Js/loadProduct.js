@@ -1,3 +1,7 @@
+/*##############################################
+LOAD PRODUCTOS POR CATEGORIAS
+################################################*/
+
 function getProductCateg(categoria){
 
 	var refProd = database.ref('productos');
@@ -21,7 +25,8 @@ function getProductCateg(categoria){
 														'<div class="row noBottom">' +
 															'<div class="col s12 center">' +
 																'<img class="card-img" src="' + snapProduct.url + '">' +
-																'<p class="black-text"><b>' + snapProduct.nombre + ' ' + snapProduct.modelo + '</b></p>' +
+																'<h6 class="black-text"><b>' + snapProduct.nombre + '</b></h6>' +
+																'<p class="grey-text">' + snapProduct.modelo + '</p>' +
 															'</div>' +
 															'<div class="col s12">' +
 																'<ul class="collection">' +
@@ -65,26 +70,30 @@ function getProductCateg(categoria){
 
 }
 
-function getProductMasVendidos(){
+/*##############################################
+LOAD PRODUCTOS MAS VENDIDOS
+################################################*/
+	
+	database.ref('productos')
+			.orderByChild('cventas')
+			.limitToLast(3)
+			.on('value', function(snapshot){
 
-	var refProd = database.ref('productos');
+				$(".listProductMasVendidos").empty();
 
-	refProd.orderByChild('cventas').limitToLast(3).on('value', function(snapshot){
+				snapshot.forEach(function(childSnap){
 
-		$(".listProductMasVendidos").empty();
+					var snapProduct = childSnap.val();
 
-		snapshot.forEach(function(childSnap){
-
-			var snapProduct = childSnap.val();
-
-			$(".listProductMasVendidos").append(
+					$(".listProductMasVendidos").append(
 											'<div class="col m4 l4">' +
 												'<div class="card white">' +
 													'<div class="card-content">' +
 														'<div class="row noBottom">' +
 															'<div class="col s12 center">' +
 																'<img class="card-img" src="' + snapProduct.url + '">' +
-																'<p class="black-text"><b>' + snapProduct.nombre + ' ' + snapProduct.modelo + '</b></p>' +
+																'<h6 class="black-text"><b>' + snapProduct.nombre + '</b></h6>' +
+																'<p class="grey-text">' + snapProduct.modelo + '</p>' +
 															'</div>' +
 															'<div class="col s12">' +
 																'<ul class="collection">' +
@@ -106,8 +115,6 @@ function getProductMasVendidos(){
 											'</div>'
 											);
 
-		});
+				});
 
-	});
-
-}
+			});
