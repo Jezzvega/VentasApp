@@ -1,7 +1,8 @@
 var database = firebase.database();
-var ref = database.ref('categorias');
 
 $('#addCatBtn').on('click', function() {
+
+  var ref = database.ref('categorias');
 
   var categoria = document.getElementById('inNewCategoria').value;
 

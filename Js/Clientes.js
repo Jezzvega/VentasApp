@@ -1,7 +1,8 @@
 var database = firebase.database();
-var ref = database.ref('clientes');
 
 $('#newClientBtn').on('click', function() {
+
+  var ref = database.ref('clientes');
 
   var nombNegocio = $("#inNombreNegocio").val();
   var nombDueno = $("#inNombreDueno").val();

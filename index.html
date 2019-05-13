@@ -10,15 +10,23 @@
 <body>
 	<div class="navbar-fixed navbarHome">
 
-	    <nav class="white z-depth-2">
-	      <div class="nav-wrapper">
-	      	<a href="#" data-target="slide-out" class="left sidenav-trigger show-on-large"><i class="material-icons black-text">menu</i></a>
-	        <a class="brand-logo black-text">Ventas</a>
-	        <ul class="right">
-	          <li><a href="#carrito" class="black-text link"><i class="material-icons left">shopping_cart</i><span class="cantidadCesta new badge red" data-badge-caption=""></span>
-	          	<span style="display: none" class="sumaCesta new badge red" data-badge-caption=""></span></a></li>
-	        </ul>
-	      </div>
+	    <nav class="nav-extended white z-depth-2">
+		    <div class="nav-wrapper">
+		      	<a href="#" data-target="slide-out" class="left sidenav-trigger show-on-large"><i class="material-icons black-text">menu</i></a>
+		        <a class="brand-logo black-text">Ventas</a>
+		        <ul class="right">
+		          <li><a href="#carrito" class="black-text link"><i class="material-icons left">shopping_cart</i><span class="cantidadCesta new badge red" data-badge-caption=""></span>
+		          	<span style="display: none" class="sumaCesta new badge red" data-badge-caption=""></span></a></li>
+		        </ul>
+		    </div>
+	      	<div class="nav-content admin">
+		      <ul class="tabs tabs-transparent">
+		        <li class="tab"><a class="black-text active" href="#controlPanel">Panel de Control</a></li>
+		        <li class="tab"><a class="black-text" href="#cpProductos">Productos</a></li>
+		        <li class="tab"><a class="black-text" href="#cpPedidos">Pedidos</a></li>
+		        <li class="tab"><a class="black-text" href="#cpClientes">Clientes</a></li>
+		      </ul>
+		    </div>
 	    </nav>
 
 	</div>
@@ -36,6 +44,8 @@
 		<li><a class="subheader ">Opciones de Administración</a></li>
 		<li><a href="#home" class="link sidenav-close"><i class="material-icons">home</i>Inicio</a></li>
 		<li><a href="#admin" class="link sidenav-close"><i class="material-icons">dashboard</i>Panel de Control</a></li>
+		<li><div class="divider"></div></li>
+		<li><a class="subheader ">Cuenta</a></li>
 		<li><a id="logoutBtn" href="#" class="sidenav-close"><i class="material-icons red-text">exit_to_app</i>Cerrar Sesión</a></li>
 
 	</ul>
@@ -419,122 +429,168 @@
 
 	<div class="container admin">
 		<br>
-		<div class="row">
-			<div class="col m3 l3">
-				<div class="card-panel white hoverable center">
-					<a href="#" data-target="newProductModal" class="modal-trigger"><i class="material-icons left">add_box</i>Producto</a>
-				</div>
-			</div>
-			<div class="col m3 l3">
-				<div class="card-panel white hoverable center">
-					<a href="#" data-target="newCatModal" class="modal-trigger"><i class="material-icons left">add_box</i>Categoría</a>
-				</div>
-			</div>
-			<div class="col m3 l3">
-				<div class="card-panel white hoverable center">
-					<a href="#"><i class="material-icons left">list</i>Pedidos</a>
-				</div>
-			</div>
-			<div class="col m3 l3">
-				<div class="card-panel white hoverable center">
-					<a href="#clientesDiv"><i class="material-icons left">people_outline</i>Clientes</a></a>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col m12 l12">
-				<h4><b>Panel de Control</b></h4>
-				<div class="divider"></div>
-			</div>
-		</div>
-		<div class="row">
+		<br>
+		<br>
+		<div id="controlPanel" class="row">
 			<div class="col m12 l12">
 				<div class="row">
-					<div class="col m4 l4">
-						<div class="card-panel white hoverable">
-					        <div class="row center noBottom">
-					        	<div class="col s12">
-					        		<i class="material-icons blue-text medium">event_note</i>
-					        		<h6 class="grey-text">Pedidos Enviados</h6>
-					        		<h6><b>75</b></h6>
-					        	</div>
-					        </div>
-					    </div>
-					</div>
-					<div class="col m4 l4">
-						<div class="card-panel white hoverable">
-					        <div class="row center noBottom">
-					        	<div class="col s12">
-					        		<i class="material-icons blue-text medium">event_busy</i>
-					        		<h6 class="grey-text">Pedidos Por Enviar</h6>
-					        		<h6><b>27</b></h6>
-					        	</div>
-					        </div>
-					    </div>
-					</div>
-					<div class="col m4 l4">
-						<div class="card-panel white hoverable">
-					        <div class="row center noBottom">
-					        	<div class="col s12">
-					        		<i class="material-icons blue-text medium">event_available</i>
-					        		<h6 class="grey-text">Pedidos Totales</h6>
-					        		<h6><b>245</b></h6>
-					        	</div>
-					        </div>
-					    </div>
+					<div class="col m12 l12">
+						<h4><b>Panel de Control</b></h4>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col m12 l12">
-						<h5>Pedidos Recientes</h5>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col m12 l12">
-						<table class="white z-depth-2 centered">
-					        <thead>
-						          <tr>
-						              <th>#</th>
-						              <th>Cliente</th>
-						              <th>Fecha</th>
-						              <th>Estado</th>
-						              <th>Total</th>
-						          </tr>
-						    </thead>
+						<div class="row">
+							<div class="col m4 l4">
+								<div class="card-panel white hoverable">
+							        <div class="row center noBottom">
+							        	<div class="col s12">
+							        		<i class="material-icons blue-text medium">event_note</i>
+							        		<h6 class="grey-text">Pedidos Enviados</h6>
+							        		<h6><b>75</b></h6>
+							        	</div>
+							        </div>
+							    </div>
+							</div>
+							<div class="col m4 l4">
+								<div class="card-panel white hoverable">
+							        <div class="row center noBottom">
+							        	<div class="col s12">
+							        		<i class="material-icons blue-text medium">event_busy</i>
+							        		<h6 class="grey-text">Pedidos Por Enviar</h6>
+							        		<h6><b>27</b></h6>
+							        	</div>
+							        </div>
+							    </div>
+							</div>
+							<div class="col m4 l4">
+								<div class="card-panel white hoverable">
+							        <div class="row center noBottom">
+							        	<div class="col s12">
+							        		<i class="material-icons blue-text medium">event_available</i>
+							        		<h6 class="grey-text">Pedidos Totales</h6>
+							        		<h6><b>245</b></h6>
+							        	</div>
+							        </div>
+							    </div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col m12 l12">
+								<h5>Pedidos Recientes</h5>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col m12 l12">
+								<table class="white z-depth-2 centered">
+							        <thead>
+								          <tr>
+								              <th>#</th>
+								              <th>Cliente</th>
+								              <th>Fecha</th>
+								              <th>Estado</th>
+								              <th>Total</th>
+								          </tr>
+								    </thead>
 
-						    <tbody class="pedidosRecientes">
-						          
-						    </tbody>
-						</table>
-					</div>
-				</div>
-				<div class="row scrollspy" id="clientesDiv">
-					<div class="col m6 l6">
-						<h5>Clientes</h5>
-					</div>
-					<div class="col m6 l6">
-						<h5><a href="#" data-target="clienteModal" class="modal-trigger right btn white blue-text waves-effect"><i class="material-icons left">add_box</i>Agregar Clientes</a></h5>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col m12 l12">
-						<table class="white z-depth-2 centered">
-					        <thead>
-						          <tr>
-						              <th>Nombre</th>
-						              <th>Dueño</th>
-						              <th>Teléfonos</th>
-						          </tr>
-						    </thead>
-
-						    <tbody class="listClientes">
-						    		
-						    </tbody>
-						</table>
+								    <tbody class="pedidosRecientes">
+								          
+								    </tbody>
+								</table>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<div id="cpProductos" class="row">
+			<div class="col m12 l12">
+				<div class="row">
+					<div class="col m4 l4">
+						<h4><b>Productos</b></h4>
+					</div>
+					<div class="col m4 l4">
+						<h4><a href="#" data-target="newProductModal" class="modal-trigger right btn white blue-text waves-effect"><i class="material-icons left">add_box</i>Producto</a></h4>
+					</div>
+					<div class="col m4 l4">
+						<h4>
+							<a href="#" data-target="newCatModal" class="modal-trigger right btn white blue-text waves-effect"><i class="material-icons left">add_box</i>Categoría</a>
+						</h4>
+					</div>
+				</div>
+				<div class="row">
+					
+				</div>
+			</div>
+		</div>
+		<div id="cpPedidos" class="row">
+			<div class="col m12 l12">
+				<div class="row">
+					<div class="col m6 l6">
+						<h4><b>Pedidos</b></h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col m12 l12">
+						<div class="row">
+							<div class="col m12 l12">
+								<table class="white z-depth-2 centered">
+							        <thead>
+								          <tr>
+								              <th>#</th>
+								              <th>Cliente</th>
+								              <th>Fecha</th>
+								              <th>Estado</th>
+								              <th>Total</th>
+								          </tr>
+								    </thead>
+
+								    <tbody class="pedidosTotales">
+								          
+								    </tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="cpClientes" class="row">
+			<div class="col m12 l12">
+				<div class="row">
+					<div class="col m6 l6">
+						<h4><b>Clientes</b></h4>
+					</div>
+					<div class="col m6 l6">
+						<h4>
+							<a href="#" data-target="clienteModal" class="modal-trigger right btn white blue-text waves-effect"><i class="material-icons left">add_box</i>Agregar Clientes</a>
+						</h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col m12 l12">
+						<div class="row">
+							<div class="col m12 l12">
+								<table class="white z-depth-2 centered">
+							        <thead>
+								          <tr>
+								              <th>Nombre</th>
+								              <th>Dueño</th>
+								              <th>Teléfonos</th>
+								          </tr>
+								    </thead>
+
+								    <tbody class="listClientes">
+								    		
+								    </tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 
 	<div class="container load">
