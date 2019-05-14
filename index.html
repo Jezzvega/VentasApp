@@ -427,6 +427,105 @@
 		</div>
 	</div>
 
+	<div id="infoPedidoModal" class="modal">
+	    <div class="modal-content">
+	      	<div class="row">
+				<div class="col s12">
+					<h4><b>Datos del Pedido</b></h4>
+					<div class="divider"></div>
+				</div>
+				
+				<div class="col s12">
+					<p>
+						<b># Pedido: 
+							<span class="grey-text dataPedidoNumPedido"></span>
+						</b>
+					</p>
+					<p>
+						<b>Fecha: 
+							<span class="grey-text dataPedidoFecha"></span>
+						</b>
+					</p>
+					<p>
+						<b>Negocio: 
+							<span class="grey-text dataPedidoCliente"></span>
+						</b>
+					</p>
+					<p>
+						<b>Telefonos: 
+							<span class="grey-text dataPedidoTel"></span>
+						</b>
+					</p>
+					<p>
+						<b>Ubicacion: 
+							<span class="grey-text dataPedidoUbic"></span>
+						</b>
+					</p>
+					<br>
+				</div>
+
+				<div class="col s12">
+					<table class="centered white">
+						<thead>
+							<tr>
+								<th>Código</th>
+								<th>Descripción</th>
+							    <th>Precio</th>
+							    <th>Cantidad</th>
+							    <th>Total</th>
+							</tr>
+						</thead>
+
+						<tbody class="dataPedidoProductList">
+							
+						</tbody>
+					</table>
+				</div>
+
+		        <div class="col s6 offset-s6">
+					<div class="row">
+						<div class="col s12">
+							<br>
+							<table class="centered">
+								
+								<tbody>
+									<tr>
+							            <td class="grey-text left"><b>Pedido:</b></td>
+							            <td class="right"><b>$<span class="dataPedidoSubTot"></span></b></td>
+							        </tr>
+							        <tr>
+							            <td class="grey-text left"><b>Envío:</b></td>
+							            <td class="right"><b>$<span>0.00</span></b></td>
+							        </tr>
+							        <tr>
+							            <td class="grey-text left"><b>ITBMS:</b></td>
+							            <td class="right"><b>$<span class="dataPedidoITMBS"></span></b></td>
+							        </tr>
+								</tbody>
+
+							</table>
+						</div>
+						
+						<div class="col s6 offset-s6">
+							<h6 class="right"><b>Total:</b></h6>
+							<br>
+							<h5 class="right blue-text"><b>$<span class="dataPedidoTotal"></span></b></h5>
+						</div>
+					</div>
+		        </div>
+
+		    </div>
+			<div class="row">
+				<div class="col s6">
+					<a href="#" class="modal-close left btn-flat waves-effect"><b>Cancelar</b></a>
+				</div>
+				<div class="col s6">
+					<a style="width: 100%;" href="#" id="imprimirBtn" class="right btn waves-effect blue">¡Imprimir Factura!</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="container admin">
 		<br>
 		<br>
@@ -519,7 +618,28 @@
 					</div>
 				</div>
 				<div class="row">
-					
+					<div class="col m12 l12">
+						<div class="row">
+							<div class="col m12 l12">
+								<table class="white z-depth-2 centered">
+							        <thead>
+								          <tr>
+								              <th>Codigo</th>
+								              <th>Nombre</th>
+								              <th>Fecha</th>
+								              <th>Estado</th>
+								              <th>Total</th>
+								              <th>Ver</th>
+								          </tr>
+								    </thead>
+
+								    <tbody class="productosTotales">
+								          
+								    </tbody>
+								</table>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -542,6 +662,7 @@
 								              <th>Fecha</th>
 								              <th>Estado</th>
 								              <th>Total</th>
+								              <th>Ver</th>
 								          </tr>
 								    </thead>
 
