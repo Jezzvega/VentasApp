@@ -170,7 +170,7 @@
 		          	<input id="inCelNegocio" type="text" class="validate" placeholder="Ej. 6600-0000">
 		          	<label for="inCelNegocio">Numero de Celular</label>
 		        </div>
-		        
+
 			</div>
 			<div class="row">
 				<div class="col s12">
@@ -196,7 +196,7 @@
 					</div>
 				</div>
 				<div class="row listProductMasVendidos">
-					
+
 				</div>
 			</div>
 		</div>
@@ -223,7 +223,7 @@
 		<div class="row">
 			<div class="col m12 l12">
 				<div class="row listProductos">
-					
+
 				</div>
 			</div>
 		</div>
@@ -310,7 +310,7 @@
 					</thead>
 
 					<tbody class="cuerpoCarrito">
-						          
+
 					</tbody>
 				</table>
 			</div>
@@ -350,7 +350,7 @@
 					<div class="divider"></div>
 					<br>
 				</div>
-				
+
 				<div class="col s6">
 					<div class="row">
 						<div class="col s12">
@@ -359,7 +359,7 @@
 						<div class="col s12">
 							<label>Cliente:</label>
 							<select id="nombreCliente" class="browser-default selectCliente">
-								
+
 							</select>
 							<br>
 						</div>
@@ -381,7 +381,7 @@
 						</div>
 						<div class="col s12">
 							<table class="centered">
-								
+
 								<tbody>
 									<tr>
 							            <td class="grey-text left"><b>Pedido:</b></td>
@@ -434,30 +434,30 @@
 					<h4><b>Datos del Pedido</b></h4>
 					<div class="divider"></div>
 				</div>
-				
+
 				<div class="col s12">
 					<p>
-						<b># Pedido: 
+						<b># Pedido:
 							<span class="grey-text dataPedidoNumPedido"></span>
 						</b>
 					</p>
 					<p>
-						<b>Fecha: 
+						<b>Fecha:
 							<span class="grey-text dataPedidoFecha"></span>
 						</b>
 					</p>
 					<p>
-						<b>Negocio: 
+						<b>Negocio:
 							<span class="grey-text dataPedidoCliente"></span>
 						</b>
 					</p>
 					<p>
-						<b>Telefonos: 
+						<b>Telefonos:
 							<span class="grey-text dataPedidoTel"></span>
 						</b>
 					</p>
 					<p>
-						<b>Ubicacion: 
+						<b>Ubicacion:
 							<span class="grey-text dataPedidoUbic"></span>
 						</b>
 					</p>
@@ -477,7 +477,7 @@
 						</thead>
 
 						<tbody class="dataPedidoProductList">
-							
+
 						</tbody>
 					</table>
 				</div>
@@ -487,7 +487,7 @@
 						<div class="col s12">
 							<br>
 							<table class="centered">
-								
+
 								<tbody>
 									<tr>
 							            <td class="grey-text left"><b>Pedido:</b></td>
@@ -505,7 +505,7 @@
 
 							</table>
 						</div>
-						
+
 						<div class="col s6 offset-s6">
 							<h6 class="right"><b>Total:</b></h6>
 							<br>
@@ -520,7 +520,7 @@
 					<a href="#" class="modal-close left btn-flat waves-effect"><b>Cancelar</b></a>
 				</div>
 				<div class="col s6">
-					<a style="width: 100%;" href="#" id="imprimirBtn" class="right btn waves-effect blue">¡Imprimir Factura!</a>
+					<a style="width: 100%;" onclick="HTMLtoPDF()" href="#" id="imprimirBtn" class="right btn waves-effect blue">¡Imprimir Factura!</a>
 				</div>
 			</div>
 		</div>
@@ -593,7 +593,7 @@
 								    </thead>
 
 								    <tbody class="pedidosRecientes">
-								          
+
 								    </tbody>
 								</table>
 							</div>
@@ -634,7 +634,7 @@
 								    </thead>
 
 								    <tbody class="productosTotales">
-								          
+
 								    </tbody>
 								</table>
 							</div>
@@ -667,7 +667,7 @@
 								    </thead>
 
 								    <tbody class="pedidosTotales">
-								          
+
 								    </tbody>
 								</table>
 							</div>
@@ -702,7 +702,7 @@
 								    </thead>
 
 								    <tbody class="listClientes">
-								    		
+
 								    </tbody>
 								</table>
 							</div>
@@ -748,6 +748,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-database.js"></script>
@@ -777,5 +778,6 @@
 	<script src="Js/checkout.js"></script>
 	<script src="Js/loadProduct.js"></script>
 	<script src="Js/loadPedidos.js"></script>
+	<script src="Js/genPdf.js"></script>
 </body>
 </html>
