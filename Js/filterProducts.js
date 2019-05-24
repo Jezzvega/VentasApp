@@ -6,7 +6,6 @@ $('#searchCat').keyup(function() {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
   buscarFormated = MaysPrimera(buscar.toLowerCase());
-  console.log(buscarFormated);
 
   refProduct.orderByChild('nombre').startAt(buscarFormated).endAt(buscarFormated+"\uf8ff").on('value', function(snapshot){
 
@@ -36,14 +35,14 @@ $('#searchCat').keyup(function() {
 																			'<b class="red-text">Oferta:</b><span class="red-text right">$' + snapProduct.precioOfer + '</span>'
 																		:
 																			'<b>Precio:</b><span class="right">$' + snapProduct.precio + '</span>'
-																		) + 
+																		) +
 																	'</li>' +
 																	'<li class="collection-item"><b>Cantidad:</b>' + (
 																		snapProduct.stock > 0 ?
 																			'<span class="right">' + snapProduct.stock + '</span>'
 																		:
 																			'<span class="red-text right">Agotado</span>'
-																		) + 
+																		) +
 																	'</li>' +
 																'</ul>' +
 															'</div>' +

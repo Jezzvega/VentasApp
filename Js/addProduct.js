@@ -2,16 +2,6 @@
 var refdb = database.ref('productos');
 var storage = firebase.storage();
 //var storRef = storageRef.child('imagesproducts/');
-function limpiar() {
-  document.getElementById("imagenP").value = "";
-  document.getElementById("namefile").value = "";
-  document.getElementById("newProdCodigo").value = "";
-  document.getElementById("newProdNombre").value = "";
-  document.getElementById("newProdModelo").value = "";
-  document.getElementById("newProdDetalles").value = "";
-  document.getElementById("newProdPrecio").value = "";
-  document.getElementById("newProdStock").value = "";
-}
 
 function limpiar() {
 document.getElementById('imagenP').value = "";
