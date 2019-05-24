@@ -78,6 +78,7 @@ select{
 
 .modal{
 	border-radius: 15px;
+  width: 90%!important;
 }
 
 .card, .card-panel{
