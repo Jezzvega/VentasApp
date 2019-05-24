@@ -1,10 +1,11 @@
+var nombCateg = '';
 $('.link').on('click', function(){
 
 	var link = $(this).attr('href');
 
 	switch(link){
 
-		case "#home": 
+		case "#home":
 			$('.carrito').css('display', 'none');
 			$('.categorias').css('display', 'none');
 			$('.admin').css('display', 'none');
@@ -12,7 +13,7 @@ $('.link').on('click', function(){
 			$('.home').css('display', 'block');
 		break;
 
-		case "#admin": 
+		case "#admin":
 			$('.carrito').css('display', 'none');
 			$('.categorias').css('display', 'none');
 			$('.home').css('display', 'none');
@@ -20,7 +21,7 @@ $('.link').on('click', function(){
 			$('.admin').css('display', 'block');
 		break;
 
-		case "#carrito": 
+		case "#carrito":
 			$('.admin').css('display', 'none');
 			$('.categorias').css('display', 'none');
 			$('.home').css('display', 'none');
@@ -35,10 +36,10 @@ $('.link').on('click', function(){
 $('.categList').on('click', '.link', function(){
 
 	var link = $(this).attr('href');
-	var nombCateg = $(this).attr('nombCateg');
+	nombCateg = $(this).attr('nombCateg');
 
 	if(link == "#categorias"){
-		
+
 		$('.carrito').css('display', 'none');
 		$('.admin').css('display', 'none');
 		$('.login').css('display', 'none');
@@ -49,6 +50,7 @@ $('.categList').on('click', '.link', function(){
 		$('.categTitle').append('<b>'+nombCateg+'</b>');
 
 		getProductCateg(nombCateg);
+
 	}
 
 });

@@ -17,6 +17,13 @@ $('#newProdBtn').on('click', function() {
   var stockProd = document.getElementById('newProdStock').value;
   var downloadURL;
 
+  function MaysPrimera(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  nombProd = MaysPrimera(nombProd.toLowerCase());
+  //console.log(nombProd);
+
+
   if (namefile != "") {
     var file = document.getElementById('imagenP');
     var filePath = file.value;
@@ -182,7 +189,6 @@ $('#newProdBtn').on('click', function() {
         function() {
           // Upload completed successfully, now we can get the download URL
           pathReference.getDownloadURL().then(function(downloadURL) {
-            console.log('File available at', downloadURL);
 
             //Subimos los datos
             refdb.push({
