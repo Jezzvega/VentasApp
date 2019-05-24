@@ -13,6 +13,18 @@ function limpiar() {
   document.getElementById("newProdStock").value = "";
 }
 
+function limpiar() {
+document.getElementById('imagenP').value = "";
+document.getElementById('namefile').value = "";
+document.getElementById('newProdCodigo').value = "";
+document.getElementById('newProdNombre').value = "";
+document.getElementById('newProdModelo').value = "";
+document.getElementById('newProdDetalles').value = "";
+document.getElementById('newProdPrecio').value = "";
+document.getElementById('newProdPrecioOfer').value = "";
+document.getElementById('newProdStock').value = "";
+}
+
 $('#newProdBtn').on('click', function() {
 
   var file = document.getElementById('imagenP').files[0];
