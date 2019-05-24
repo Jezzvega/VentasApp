@@ -13,6 +13,7 @@ $('#newProdBtn').on('click', function() {
   var catProd = document.getElementById('newProdCat').value;
   var descrpProd = document.getElementById('newProdDetalles').value;
   var precProd = document.getElementById('newProdPrecio').value;
+  var precOferProd = document.getElementById('newProdPrecioOfer').value;
   var stockProd = document.getElementById('newProdStock').value;
   var downloadURL;
 
@@ -101,6 +102,23 @@ $('#newProdBtn').on('click', function() {
     );
     return false;
   }
+  if (precOferProd != "") {
+    var expresion = /^[0-9]+\.?[0-9]*$/;
+    if (!expresion.test(precOferProd)) {
+      $(".helper-text").remove();
+      $("#newProdPrecioOfer").after(
+        '<span class="helper-text red-text">No se permiten caracteres especiales.</span>'
+      );
+      return false;
+    }
+
+  } else {
+    $(".helper-text").remove();
+    $("#newProdPrecioOfer").after(
+      '<span class="helper-text red-text">Este campo es obligatorio.</span>'
+    );
+    return false;
+  }
   if (stockProd != "") {
     var expresion = /^\d+$/;
     if (!expresion.test(stockProd)) {
@@ -175,8 +193,10 @@ $('#newProdBtn').on('click', function() {
               categoria: catProd,
               detalles: descrpProd,
               precio: precProd,
+              precioOfer: precOferProd,
               stock: stockProd,
-              cventas: 0
+              cventas: 0,
+              enOferta: false
 
             }, function(error) {
               if (error) {

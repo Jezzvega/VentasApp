@@ -94,11 +94,15 @@
 		          	<input id="newProdDetalles" type="text" class="validate" placeholder="Descripcion corta...">
 		          	<label for="newProdDetalles">Descripción</label>
 		        </div>
-		        <div class="input-field col s6">
+		        <div class="input-field col s4">
 		          	<input id="newProdPrecio" type="text" class="validate" placeholder="30.00">
 		          	<label for="newProdPrecio">Precio</label>
 		        </div>
-		        <div class="input-field col s6">
+		        <div class="input-field col s4">
+		          	<input id="newProdPrecioOfer" type="text" class="validate" placeholder="15.00">
+		          	<label for="newProdPrecioOfer">Precio de Oferta</label>
+		        </div>
+		        <div class="input-field col s4">
 		          	<input id="newProdStock" type="text" class="validate" placeholder="30">
 		          	<label for="newProdStock">Stock</label>
 		        </div>
@@ -107,6 +111,65 @@
 				<div class="col s12">
 					<a href="#" id="newProdBtn" class="left btn waves-effect blue">Agregar</a>
 					<a href="#" class="modal-close right btn-flat waves-effect"><b>Cancelar</b></a>
+				</div>
+			</div>
+	    </div>
+	</div>
+
+<!--EDIT PRODUCTOS-->
+	<div id="editProductModal" class="modal">
+	    <div class="modal-content">
+	      	<div class="row">
+				<div class="col m12 l12">
+					<h4><b>Editar Producto</b></h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s6">
+		          	<input id="editProdCodigo" type="text" disabled>
+		          	<label for="editProdCodigo">Código</label>
+		        </div>
+		        <div class="input-field col s6">
+		          	<input id="editProdCat" type="text" disabled>
+		          	<label for="editProdCat">Categoría</label>
+		        </div>
+		        <div class="input-field col s6">
+		          	<input id="editProdNombre" type="text" class="validate">
+		          	<label for="editProdNombre">Nombre</label>
+		        </div>
+		        <div class="input-field col s6">
+		          	<input id="editProdModelo" type="text" class="validate" >
+		          	<label for="editProdModelo">Modelo</label>
+		        </div>
+		        <div class="input-field col s12">
+		          	<input id="editProdDetalles" type="text" class="validate" >
+		          	<label for="editProdDetalles">Descripción</label>
+		        </div>
+		        <div class="input-field col s4">
+		          	<input id="editProdPrecio" type="text" class="validate" >
+		          	<label for="editProdPrecio">Precio</label>
+		        </div>
+				<div class="input-field col s4">
+		          	<input id="editProdPrecioOfer" type="text" class="validate" >
+		          	<label for="editProdPrecioOfer">Precio de Oferta</label>
+		        </div>
+		        <div class="input-field col s4">
+		          	<input id="editProdStock" type="text" class="validate" >
+		          	<label for="editProdStock">Stock</label>
+		        </div>
+		        <div class="center col s12">
+					<p>
+						<label>
+						   	<input id="checkboxActiveOfer" type="checkbox" />
+						    <span class="black-text"><b>¿Poner en Oferta?</b></span>
+						</label>
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12">
+					<a href="#" id="editProdBtn" class="right btn waves-effect blue">Guardar</a>
+					<a href="#" class="modal-close left btn-flat waves-effect"><b>Cancelar</b></a>
 				</div>
 			</div>
 	    </div>
@@ -196,6 +259,14 @@
 					</div>
 				</div>
 				<div class="row listProductMasVendidos">
+					
+				</div>
+				<div class="row">
+					<div class="col m12 l12">
+						<h5><b>Ofertas</b></h5>
+					</div>
+				</div>
+				<div class="row listProductOfer">
 					
 				</div>
 			</div>
@@ -624,16 +695,16 @@
 								<table class="white z-depth-2 centered">
 							        <thead>
 								          <tr>
-								              <th>Codigo</th>
+								              <th>Código</th>
 								              <th>Nombre</th>
-								              <th>Fecha</th>
-								              <th>Estado</th>
-								              <th>Total</th>
-								              <th>Ver</th>
+								              <th>Categoría</th>
+								              <th>Precio</th>
+								              <th>Stock</th>
+								              <th>Editar</th>
 								          </tr>
 								    </thead>
 
-								    <tbody class="productosTotales">
+								    <tbody class="listProductosTotales">
 								          
 								    </tbody>
 								</table>
@@ -777,5 +848,6 @@
 	<script src="Js/checkout.js"></script>
 	<script src="Js/loadProduct.js"></script>
 	<script src="Js/loadPedidos.js"></script>
+	<script src="Js/editProduct.js"></script>
 </body>
 </html>
