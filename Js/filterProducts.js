@@ -1,13 +1,21 @@
 $('#searchCat').keyup(function() {
   var refProduct = database.ref('productos');
   var buscar = $(this).val();
-  refProduct.orderByChild('nombre').startAt(buscar).endAt(buscar+"\uf8ff").on('value', function(snapshot){
 
-		$(".listProductos").empty();
+  function MaysPrimera(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  buscarFormated = MaysPrimera(buscar.toLowerCase());
+  console.log(buscarFormated);
+
+  refProduct.orderByChild('nombre').startAt(buscarFormated).endAt(buscarFormated+"\uf8ff").on('value', function(snapshot){
+
+	   $(".listProductos").empty();
 
 		snapshot.forEach(function(childSnap){
 
 			var snapProduct = childSnap.val();
+
 
 			if(snapProduct.categoria == nombCateg){
 
