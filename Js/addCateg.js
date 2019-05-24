@@ -10,7 +10,7 @@ $('#addCatBtn').on('click', function() {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
   categoria = MaysPrimera(categoria.toLowerCase());
-  console.log(categoria);
+  //console.log(categoria);
 
   if (categoria != "") {
     var expresion = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]*$/;
