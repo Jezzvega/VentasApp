@@ -31,17 +31,24 @@ $('#searchCat').keyup(function() {
 															'</div>' +
 															'<div class="col s12">' +
 																'<ul class="collection">' +
-																	'<li class="collection-item"><b>Precio:</b><span class="right">$' + snapProduct.precio + '</span></li>' +
+																	'<li class="collection-item">' + (
+																		snapProduct.enOferta == true ?
+																			'<b class="red-text">Oferta:</b><span class="red-text right">$' + snapProduct.precioOfer + '</span>'
+																		:
+																			'<b>Precio:</b><span class="right">$' + snapProduct.precio + '</span>'
+																		) + 
+																	'</li>' +
 																	'<li class="collection-item"><b>Cantidad:</b>' + (
-																	snapProduct.stock > 0 ?
-																		'<span class="right">' + snapProduct.stock + '</span>'
-																	:
-																		'<span class="red-text right">Agotado</span>'
-																	) + '</li>' +
+																		snapProduct.stock > 0 ?
+																			'<span class="right">' + snapProduct.stock + '</span>'
+																		:
+																			'<span class="red-text right">Agotado</span>'
+																		) + 
+																	'</li>' +
 																'</ul>' +
 															'</div>' +
 															'<div class="col s12 center">' +
-																'<a href="#" codProducto="' + snapProduct.codigo + '" cantProducto="1" nombreProducto="' + snapProduct.nombre + '" modelProducto="' + snapProduct.modelo + '" categProducto="' + snapProduct.categoria + '" precioProducto="' + snapProduct.precio + '" stockProducto="' + snapProduct.stock + '" class="addProduct btn blue"><i class="right material-icons">add</i>Añadir</a>' +
+																'<a href="#" codProducto="' + snapProduct.codigo + '" cantProducto="1" nombreProducto="' + snapProduct.nombre + '" modelProducto="' + snapProduct.modelo + '" categProducto="' + snapProduct.categoria + '" ' + ( snapProduct.enOferta == true ? 'precioProducto="'+ snapProduct.precioOfer +'"' : 'precioProducto="'+ snapProduct.precio +'"' ) +  ' stockProducto="' + snapProduct.stock + '" class="addProduct btn blue"><i class="right material-icons">add</i>Añadir</a>' +
 															'</div>' +
 														'</div>' +
 													'</div>' +
