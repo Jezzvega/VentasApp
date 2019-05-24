@@ -40,7 +40,7 @@ pedidosRef.orderByKey().limitToLast(5).on('value', function(snapshot){
 LOAD TODOS LOS PEDIDOS
 ####################################################*/
 
-pedidosRef.orderByKey().on('value', function(snapshot){
+pedidosRef.orderByChild('NumPedido').on('value', function(snapshot){
 
 		$(".pedidosTotales").empty();
 
