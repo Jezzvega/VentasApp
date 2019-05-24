@@ -2,6 +2,16 @@
 var refdb = database.ref('productos');
 var storage = firebase.storage();
 //var storRef = storageRef.child('imagesproducts/');
+function limpiar() {
+  document.getElementById("imagenP").value = "";
+  document.getElementById("namefile").value = "";
+  document.getElementById("newProdCodigo").value = "";
+  document.getElementById("newProdNombre").value = "";
+  document.getElementById("newProdModelo").value = "";
+  document.getElementById("newProdDetalles").value = "";
+  document.getElementById("newProdPrecio").value = "";
+  document.getElementById("newProdStock").value = "";
+}
 
 $('#newProdBtn').on('click', function() {
 
@@ -219,6 +229,7 @@ $('#newProdBtn').on('click', function() {
                   icon: "success",
                   button: "Ok!",
                 });
+                limpiar();
                 document.getElementById('newProductModal').value = "";
                 $('.modal').modal('close');
               }
@@ -230,9 +241,6 @@ $('#newProdBtn').on('click', function() {
 
     }
 
-
   });
-
-
 
 });
