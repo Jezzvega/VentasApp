@@ -38,6 +38,7 @@ margins = {
 			        pdf.save(numP+'.pdf');
 			        swal("Pedido generado correctamente!");
 							updateState();
+							$(".modal").modal('close');
 			      }
 			  )
 	    swal("Su Factura ha sido creada correctamente!", {
@@ -54,7 +55,6 @@ margins = {
 
 function updateState(){
 	var numPed = $("#imprimirBtn").attr("idPedido");
-	console.log("Key del Pedido: "+numPed);
 	var pedidRef = database.ref('pedidos/'+numPed);
 	var status = 1;
 	pedidRef.update({

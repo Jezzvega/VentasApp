@@ -170,7 +170,8 @@ $('#newProdBtn').on('click', function() {
         function(snapshot) {
           // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
           var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          console.log('Upload is ' + progress + '% done');
+          //console.log('Upload is ' + progress + '% done');
+          $('.determinate').css("width",progress+"%");
           switch (snapshot.state) {
             case firebase.storage.TaskState.PAUSED: // or 'paused'
               console.log('Upload is paused');
