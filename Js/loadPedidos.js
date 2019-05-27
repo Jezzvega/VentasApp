@@ -130,3 +130,43 @@ $('.pedidosTotales').on('click', '#infoPedidoBtn', function(){
 	});
 
 });
+//FILTRO DE PEDIDOS POR FECHA
+$("#dateFilter").change(function(){
+
+	var fechain = $('.datepicker').val();
+
+		pedidosRef.orderByChild("Fecha").startAt(fechain).endAt(fechain+"\uf8ff").on('value', function(snapshot){
+
+			$(".pedidosTotales").empty();
+
+				snapshot.forEach(function(childSnap){
+
+					var data = childSnap.val();
+
+		      $(".pedidosTotales").append(
+											'<tr>' +
+											    '<td>'+ data.NumPedido +'</td>' +
+											    '<td>'+ data.Cliente +'</td>' +
+											    '<td>'+ data.Fecha +'</td>' +
+											    '<td>' + (
+											        data.Estado == 0 ?
+													'<span class="new badge red" data-badge-caption="Por Procesar"></span>'
+												:
+													'<span class="new badge green" data-badge-caption="Enviado"></span>'
+												) +
+											    '</td>' +
+											    '<td>$<span>'+ Number(data.PrecioTot).toFixed(2) +'<span></td>' +
+											    '<td><a href="#" data-target="infoPedidoModal" class="modal-trigger" id="infoPedidoBtn" codPedido="'+ childSnap.key +'"><span><i class="material-icons blue-text">description</i></span></a></td>' +
+											'</tr>'
+										);
+
+				});
+
+		});
+
+
+
+
+
+
+});
