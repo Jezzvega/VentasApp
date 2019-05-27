@@ -29,8 +29,8 @@ pedidosRef.orderByKey().limitToLast(5).on('value', function(snapshot){
 										);
 
 			});
-			
-			
+
+
 
 		});
 
@@ -70,8 +70,8 @@ pedidosRef.orderByChild('NumPedido').on('value', function(snapshot){
 										);
 
 			});
-			
-			
+
+
 
 		});
 
@@ -103,6 +103,8 @@ $('.pedidosTotales').on('click', '#infoPedidoBtn', function(){
 	itbms.empty();
 	total.empty();
 	$('.dataPedidoProductList').empty();
+
+	$("#imprimirBtn").attr("idPedido", codPedido);
 
 	pedidosRef.child(codPedido).once('value', function(snapshot){
 
