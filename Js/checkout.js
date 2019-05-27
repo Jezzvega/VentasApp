@@ -6,6 +6,7 @@ $("#checkoutBtn").on('click', function(){
 
 	var fechaPedido = getFecha();
 	var idclientePedido = $( ".selectCliente option:selected" ).attr('id');
+	var nombreClientePedido = $( ".selectCliente option:selected" ).val();
 	var precioBrutoPedido = $(".sumaCheckout").html();
 	var itbmsPedido = $(".sumaChechoutITBMS").html();
 	var precioTotalPedido = $(".sumaTotalCheckout").html();
@@ -38,8 +39,9 @@ $("#checkoutBtn").on('click', function(){
 		database.ref('pedidos/'+ newPedidoKey).set({
 
 			NumPedido: newNumPedido,
+			Cliente: nombreClientePedido,
 			Fecha: fechaPedido,
-			Cliente: idclientePedido,
+			IdCliente: idclientePedido,
 			PrecioBruto: precioBrutoPedido,
 			ITBMS: itbmsPedido,
 			PrecioTot: precioTotalPedido,
