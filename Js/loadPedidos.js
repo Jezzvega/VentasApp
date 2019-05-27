@@ -41,7 +41,7 @@ pedidosRef.orderByKey().on('value', function(snapshot){
 
 			var data = childSnap.val();
 
-			$(".pedidosTotales").append(
+      $(".pedidosTotales").append(
 									'<tr>' +
 									    '<td>'+ data.NumPedido +'</td>' +
 									    '<td>'+ data.Cliente +'</td>' +
@@ -88,6 +88,8 @@ $('.pedidosTotales').on('click', '#infoPedidoBtn', function(){
 	itbms.empty();
 	total.empty();
 	$('.dataPedidoProductList').empty();
+
+	$("#imprimirBtn").attr("idPedido", codPedido);
 
 	pedidosRef.child(codPedido).once('value', function(snapshot){
 
