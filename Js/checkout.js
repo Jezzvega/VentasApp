@@ -63,6 +63,9 @@ $("#checkoutBtn").on('click', function(){
 		    	for (var i = 0; i < nombreProductos.length; i++) {
 			
 					var codeProductosArray = $(codeProducto[i]).attr('idProducto');
+					var keyProductosArray = $(codeProducto[i]).attr('prodKey');
+					var stockProductosArray = $(codeProducto[i]).attr('stockproducto');
+					var cVentasProductosArray = $(codeProducto[i]).attr('cVentas');
 					var nombreProductosArray = $(nombreProductos[i]).html();
 					var precioProductosArray = $(precioProductos[i]).html();
 					var precioSubtotalProductosArray = $(precioSubtotalProductos[i]).html();
@@ -75,6 +78,13 @@ $("#checkoutBtn").on('click', function(){
 						Precio: Number(precioProductosArray),
 						Cantidad: cantidadProductosArray,
 						PrecioSubTot: Number(precioSubtotalProductosArray)
+
+					});
+
+					database.ref('productos/'+keyProductosArray).update({
+
+						cventas: Number(cantidadProductosArray) + Number(cVentasProductosArray),
+						stock: Number(stockProductosArray) - Number(cantidadProductosArray)
 
 					});
 

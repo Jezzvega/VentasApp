@@ -46,8 +46,12 @@ function getProductCateg(categoria){
 																	'</li>' +
 																'</ul>' +
 															'</div>' +
-															'<div class="col s12 center">' +
-																'<a href="#" codProducto="' + snapProduct.codigo + '" cantProducto="1" nombreProducto="' + snapProduct.nombre + '" modelProducto="' + snapProduct.modelo + '" categProducto="' + snapProduct.categoria + '" ' + ( snapProduct.enOferta == true ? 'precioProducto="'+ snapProduct.precioOfer +'"' : 'precioProducto="'+ snapProduct.precio +'"' ) +  ' stockProducto="' + snapProduct.stock + '" class="addProduct btn blue"><i class="right material-icons">add</i>Añadir</a>' +
+															'<div class="col s12 center">' + (
+																snapProduct.stock > 0 ?
+																	'<a href="#" codProducto="' + snapProduct.codigo + '" cVentas="'+ snapProduct.cventas +'" prodKey="'+ childSnap.key +'" cantProducto="1" nombreProducto="' + snapProduct.nombre + '" modelProducto="' + snapProduct.modelo + '" categProducto="' + snapProduct.categoria + '" ' + ( snapProduct.enOferta == true ? 'precioProducto="'+ snapProduct.precioOfer +'"' : 'precioProducto="'+ snapProduct.precio +'"' ) +  ' stockProducto="' + snapProduct.stock + '" class="addProduct btn blue"><i class="right material-icons">add</i>Añadir</a>'
+																:
+																	'<a href="#" class="addProduct btn blue disabled"><i class="right material-icons">add</i>Añadir</a>'
+																) + 
 															'</div>' +
 														'</div>' +
 													'</div>' +
@@ -113,8 +117,12 @@ LOAD PRODUCTOS MAS VENDIDOS
 																	) + '</li>' +
 																'</ul>' +
 															'</div>' +
-															'<div class="col s12 center">' +
-																'<a href="#" codProducto="' + snapProduct.codigo + '" cantProducto="1" nombreProducto="' + snapProduct.nombre + '" modelProducto="' + snapProduct.modelo + '" categProducto="' + snapProduct.categoria + '" precioProducto="' + snapProduct.precio + '" stockProducto="' + snapProduct.stock + '" class="addProduct btn blue"><i class="right material-icons">add</i>Añadir</a>' +
+															'<div class="col s12 center">' + (
+																snapProduct.stock > 0 ?
+																	'<a href="#" codProducto="' + snapProduct.codigo + '" cVentas="'+ snapProduct.cventas +'" prodKey="'+ childSnap.key +'" cantProducto="1" nombreProducto="' + snapProduct.nombre + '" modelProducto="' + snapProduct.modelo + '" categProducto="' + snapProduct.categoria + '" ' + ( snapProduct.enOferta == true ? 'precioProducto="'+ snapProduct.precioOfer +'"' : 'precioProducto="'+ snapProduct.precio +'"' ) +  ' stockProducto="' + snapProduct.stock + '" class="addProduct btn blue"><i class="right material-icons">add</i>Añadir</a>'
+																:
+																	'<a href="#" class="addProduct btn blue disabled"><i class="right material-icons">add</i>Añadir</a>'
+																) + 
 															'</div>' +
 														'</div>' +
 													'</div>' +
@@ -165,8 +173,12 @@ LOAD PRODUCTOS EN OFERTA
 																	) + '</li>' +
 																'</ul>' +
 															'</div>' +
-															'<div class="col s12 center">' +
-																'<a href="#" codProducto="' + snapProduct.codigo + '" cantProducto="1" nombreProducto="' + snapProduct.nombre + '" modelProducto="' + snapProduct.modelo + '" categProducto="' + snapProduct.categoria + '" precioProducto="' + snapProduct.precio + '" stockProducto="' + snapProduct.stock + '" class="addProduct btn blue"><i class="right material-icons">add</i>Añadir</a>' +
+															'<div class="col s12 center">' + (
+																snapProduct.stock > 0 ?
+																	'<a href="#" codProducto="' + snapProduct.codigo + '" cVentas="'+ snapProduct.cventas +'" prodKey="'+ childSnap.key +'" cantProducto="1" nombreProducto="' + snapProduct.nombre + '" modelProducto="' + snapProduct.modelo + '" categProducto="' + snapProduct.categoria + '" ' + ( snapProduct.enOferta == true ? 'precioProducto="'+ snapProduct.precioOfer +'"' : 'precioProducto="'+ snapProduct.precio +'"' ) +  ' stockProducto="' + snapProduct.stock + '" class="addProduct btn blue"><i class="right material-icons">add</i>Añadir</a>'
+																:
+																	'<a href="#" class="addProduct btn blue disabled"><i class="right material-icons">add</i>Añadir</a>'
+																) + 
 															'</div>' +
 														'</div>' +
 													'</div>' +
