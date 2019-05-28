@@ -4,22 +4,18 @@ $('#loginBtn').on('click', function() {
 
   if (email == "") {
     $('.errorMsj').append("Completa el campo Correo");
-    alert("Quedo en email");
+     //alertify.error('Campo vacio.');
   } else if (password == "") {
     $('.errorMsj').append("Completa el campo Contraseña");
-    alert("Quedo en Contraseña");
+    // alertify.error('Campo vacio.');
   }else {
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-      console.log("Inicio la sesion");
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
 
     });
   }
-
-
-
 });
 
 //Ejecutamos la funcion
@@ -35,8 +31,10 @@ function observador(){
   firebase.auth().onAuthStateChanged(function(user) {
 
     if (user) {
-
-      console.log('Si existe usuario activo');
+      iziToast.success({
+      title: 'OK',
+      message: 'Sesion Iniciada!',
+  });
       //Funcion para mostrar contenido al usuario logueado
       mostrarContenido(user);
       // User is signed in.
