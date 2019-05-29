@@ -107,8 +107,14 @@ LOAD PRODUCTOS MAS VENDIDOS
 																'<p class="grey-text">' + snapProduct.modelo + '</p>' +
 															'</div>' +
 															'<div class="col s12">' +
-																'<ul class="collection">' +
-																	'<li class="collection-item"><b>Precio:</b><span class="right">$' + snapProduct.precio + '</span></li>' +
+																'<ul class="collection">' + 
+																	'<li class="collection-item">' + (
+																		snapProduct.enOferta == true ?
+																			'<b class="red-text">Oferta:</b><span class="red-text right">$' + snapProduct.precioOfer + '</span>'
+																		:
+																			'<b>Precio:</b><span class="right">$' + snapProduct.precio + '</span>'
+																		) + 
+																	'</li>' +
 																	'<li class="collection-item"><b>Cantidad:</b>' + (
 																	snapProduct.stock > 0 ?
 																		'<span class="right">' + snapProduct.stock + '</span>'
