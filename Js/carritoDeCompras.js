@@ -61,7 +61,7 @@ if(localStorage.getItem("listaProductos") != null){
 AGREGAR AL CARRITO
 */
 
-$(".listProductos").on('click','.addProduct', function(){
+$('.infoProductView').on('click','.addProduct', function(){
 
 
 	var idProducto = $(this).attr("codProducto");
