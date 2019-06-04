@@ -46,12 +46,8 @@ function getProductCateg(categoria){
 																	'</li>' +
 																'</ul>' +
 															'</div>' +
-															'<div class="col s12 center">' + (
-																snapProduct.stock > 0 ?
-																	'<a href="#" codProducto="' + snapProduct.codigo + '" cVentas="'+ snapProduct.cventas +'" prodKey="'+ childSnap.key +'" cantProducto="1" nombreProducto="' + snapProduct.nombre + '" modelProducto="' + snapProduct.modelo + '" categProducto="' + snapProduct.categoria + '" ' + ( snapProduct.enOferta == true ? 'precioProducto="'+ snapProduct.precioOfer +'"' : 'precioProducto="'+ snapProduct.precio +'"' ) +  ' stockProducto="' + snapProduct.stock + '" class="addProduct btn blue"><i class="right material-icons">add</i>Añadir</a>'
-																:
-																	'<a href="#" class="addProduct btn blue disabled"><i class="right material-icons">add</i>Añadir</a>'
-																) + 
+															'<div class="col s12 center">' +
+																'<a href="#" data-target="infoProductModal" prodKey="'+ childSnap.key +'" class="modal-trigger btn blue infoProdBtn"><i class="right material-icons">visibility</i>Ver</a>' +
 															'</div>' +
 														'</div>' +
 													'</div>' +
@@ -123,12 +119,8 @@ LOAD PRODUCTOS MAS VENDIDOS
 																	) + '</li>' +
 																'</ul>' +
 															'</div>' +
-															'<div class="col s12 center">' + (
-																snapProduct.stock > 0 ?
-																	'<a href="#" codProducto="' + snapProduct.codigo + '" cVentas="'+ snapProduct.cventas +'" prodKey="'+ childSnap.key +'" cantProducto="1" nombreProducto="' + snapProduct.nombre + '" modelProducto="' + snapProduct.modelo + '" categProducto="' + snapProduct.categoria + '" ' + ( snapProduct.enOferta == true ? 'precioProducto="'+ snapProduct.precioOfer +'"' : 'precioProducto="'+ snapProduct.precio +'"' ) +  ' stockProducto="' + snapProduct.stock + '" class="addProduct btn blue"><i class="right material-icons">add</i>Añadir</a>'
-																:
-																	'<a href="#" class="addProduct btn blue disabled"><i class="right material-icons">add</i>Añadir</a>'
-																) + 
+															'<div class="col s12 center">' +
+																'<a href="#" data-target="infoProductModal" prodKey="'+ childSnap.key +'" class="modal-trigger btn blue infoProdBtn"><i class="right material-icons">visibility</i>Ver</a>' +
 															'</div>' +
 														'</div>' +
 													'</div>' +
@@ -179,12 +171,8 @@ LOAD PRODUCTOS EN OFERTA
 																	) + '</li>' +
 																'</ul>' +
 															'</div>' +
-															'<div class="col s12 center">' + (
-																snapProduct.stock > 0 ?
-																	'<a href="#" codProducto="' + snapProduct.codigo + '" cVentas="'+ snapProduct.cventas +'" prodKey="'+ childSnap.key +'" cantProducto="1" nombreProducto="' + snapProduct.nombre + '" modelProducto="' + snapProduct.modelo + '" categProducto="' + snapProduct.categoria + '" ' + ( snapProduct.enOferta == true ? 'precioProducto="'+ snapProduct.precioOfer +'"' : 'precioProducto="'+ snapProduct.precio +'"' ) +  ' stockProducto="' + snapProduct.stock + '" class="addProduct btn blue"><i class="right material-icons">add</i>Añadir</a>'
-																:
-																	'<a href="#" class="addProduct btn blue disabled"><i class="right material-icons">add</i>Añadir</a>'
-																) + 
+															'<div class="col s12 center">' +
+																'<a href="#" data-target="infoProductModal" prodKey="'+ childSnap.key +'" class="modal-trigger btn blue infoProdBtn"><i class="right material-icons">visibility</i>Ver</a>' +
 															'</div>' +
 														'</div>' +
 													'</div>' +
@@ -230,3 +218,44 @@ database.ref('productos')
 			});
 
 		});
+
+/*##############################################
+LOAD INFO PRODUCTOS
+################################################*/
+
+$('.listProductos, .listProductMasVendidos, .listProductOfer').on('click', '.infoProdBtn', function(){
+
+	var prodKey = $(this).attr('prodKey');
+
+	database.ref('productos/' + prodKey + '/')
+			.once('value', function(snap){
+
+				var prodData = snap.val();
+
+				$('.infoProductView').empty();
+
+				$('.infoProductView').append(
+											'<div class="row">' +
+											    '<div class="col s5 center">' +
+											    	'<img style="height: 260px; width: 100%;" src="' + prodData.url + '">' +
+											    '</div>' +
+											    '<div class="col s7">' +
+											      	'<h5><b>' + prodData.nombre + '</b>' +
+											      		'<span class="right">' + (
+											      			prodData.stock > 0 ?
+																'<a href="#" codProducto="' + prodData.codigo + '" cVentas="'+ prodData.cventas +'" prodKey="'+ snap.key +'" cantProducto="1" nombreProducto="' + prodData.nombre + '" modelProducto="' + prodData.modelo + '" categProducto="' + prodData.categoria + '" ' + ( prodData.enOferta == true ? 'precioProducto="'+ prodData.precioOfer +'"' : 'precioProducto="'+ prodData.precio +'"' ) +  ' stockProducto="' + prodData.stock + '" class="addProduct btn blue"><i class="right material-icons">add</i>Añadir</a>'
+															:
+																'<a href="#" class="addProduct btn blue disabled"><i class="right material-icons">add</i>Añadir</a>'
+															) +
+											      		'</span>' +
+											      	'</h5>' +
+											      	'<h6 class="grey-text"> ' + prodData.modelo + '</h6>' + 
+											      	'<div class="divider"></div>' +
+											      	'<p><b>Descripción:</b><br><span>' + prodData.detalles + '</span></p>' +
+											    '</div>' +
+											'</div>'
+											);
+
+			});
+
+});

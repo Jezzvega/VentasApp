@@ -3,7 +3,7 @@ function HTMLtoPDF(){
 
 var pdf = new jsPDF('p', 'pt', 'letter');
 var numP = $('.dataPedidoNumPedido').html();
-source = $('#infoPedidoModal')[0];
+source = $('.infoPedidoPdf')[0];
 specialElementHandlers = {
 	'#bypassme': function(element, renderer){
 		return true

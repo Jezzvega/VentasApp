@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ventas</title>
+	<title>Full Box S.A.</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 	<link rel="stylesheet" type="text/css" href="Css/estilos.css">
@@ -14,7 +14,7 @@
 	    <nav class="nav-extended white z-depth-2">
 		    <div class="nav-wrapper">
 		      	<a href="#" data-target="slide-out" class="left sidenav-trigger show-on-large"><i class="material-icons black-text">menu</i></a>
-		        <a class="brand-logo black-text">Ventas</a>
+		        <a class="brand-logo black-text">Full Box S.A.</a>
 		        <ul class="right">
 		          <li><a href="#carrito" class="black-text link"><i class="material-icons left">shopping_cart</i><span class="cantidadCesta new badge red" data-badge-caption=""></span>
 		          	<span style="display: none" class="sumaCesta new badge red" data-badge-caption=""></span></a></li>
@@ -35,7 +35,7 @@
 	<ul id="slide-out" class="sidenav sidenavHome">
 		<li>
 			<div class="user-view center">
-		    	<h3><b>Ventas</b></h3>
+		    	<h3><b>Full Box S.A.</b></h3>
 		    </div>
 		</li>
 		<li><div class="divider"></div></li>
@@ -203,6 +203,15 @@
 	    </div>
 	    <div class="modal-footer">
 	      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+	    </div>
+	</div>
+
+	<div id="infoProductModal" class="modal bottom-sheet">
+	    <div class="modal-content infoProductView">
+
+	    </div>
+	    <div class="modal-footer">
+	      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
 	    </div>
 	</div>
 
@@ -492,38 +501,41 @@
 	<div id="infoPedidoModal" class="modal">
 	    <div class="modal-content">
 	      	<div class="row">
+				
 				<div class="col s12">
 					<h4><b>Datos del Pedido</b></h4>
 					<div class="divider"></div>
 				</div>
+			</div>
+			<div class="row infoPedidoPdf">
+
+				<center>
+					
+					<h4><b>FullBox S.A.</b></h4>
+					<p>6295-0505</p>
+				</center>
 
 				<div class="col s12">
 					<p>
-						<b># Pedido:
-							<span class="grey-text dataPedidoNumPedido"></span>
-						</b>
+						<b># Pedido: </b>
+						<span class="dataPedidoNumPedido"></span>
 					</p>
 					<p>
-						<b>Fecha:
-							<span class="grey-text dataPedidoFecha"></span>
-						</b>
+						<b>Fecha: </b>
+						<span class="dataPedidoFecha"></span>
 					</p>
 					<p>
-						<b>Negocio:
-							<span class="grey-text dataPedidoCliente"></span>
-						</b>
+						<b>Cliente: </b>
+						<span class="dataPedidoCliente"></span>
 					</p>
 					<p>
-						<b>Telefonos:
-							<span class="grey-text dataPedidoTel"></span>
-						</b>
+						<b>Telefonos: </b>
+						<span class="dataPedidoTel"></span>
 					</p>
 					<p>
-						<b>Ubicacion:
-							<span class="grey-text dataPedidoUbic"></span>
-						</b>
+						<b>Ubicacion: </b>
+						<span class="dataPedidoUbic"></span>
 					</p>
-					<br>
 				</div>
 
 				<div class="col s12">
@@ -549,7 +561,6 @@
 						<div class="col s12">
 							<br>
 							<table class="centered">
-
 								<tbody>
 									<tr>
 							            <td class="grey-text left"><b>Pedido:</b></td>
@@ -571,10 +582,12 @@
 						<div class="col s6 offset-s6">
 							<h6 class="right"><b>Total:</b></h6>
 							<br>
-							<h5 class="right blue-text"><b>$<span class="dataPedidoTotal"></span></b></h5>
+							<h5 class="right"><b>$<span class="dataPedidoTotal"></span></b></h5>
 						</div>
 					</div>
 		        </div>
+		        
+		        <center><h6>**Este no es un documento fiscal**</h6></center>
 
 		    </div>
 			<div class="row">
